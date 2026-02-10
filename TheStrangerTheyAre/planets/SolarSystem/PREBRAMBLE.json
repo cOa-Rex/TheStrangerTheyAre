@@ -3915,19 +3915,6 @@
         "position": {
           "z": 6
         }
-      },
-      {
-        "type": "whiteHole",
-        "horizonRadius": 0,
-        "hasWarpEffects": false,
-        "uniqueID": "PREBRAMBLE_ARCHIVES_SHORTCUT_WH",
-        "rename": "PREBRAMBLE_ARCHIVES_SHORTCUT_WH",
-        "position": {
-          "x": -4.772597,
-          "y": 281.9604,
-          "z": 88.3327
-        },
-        "pairedSingularity": "PREBRAMBLE_ARCHIVES_SHORTCUT_BH"
       }
     ],
     "slideShows": [
