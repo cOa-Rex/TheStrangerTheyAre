@@ -3915,6 +3915,19 @@
         "position": {
           "z": 6
         }
+      },
+      {
+        "type": "whiteHole",
+        "horizonRadius": 0,
+        "hasWarpEffects": false,
+        "rename": "PREBRAMBLE_WARP_DtoA_WH",
+        "uniqueID": "PREBRAMBLE_WARP_DtoA_WH",
+        "parentPath": "Sector/WarpHouse/WarpOffsets/Caves",
+        "isRelativeToParent": true,
+        "pairedSingularity": "PREBRAMBLE_WARP_DtoA_BH",
+        "position": {
+          "z": 6
+        }
       }
     ],
     "slideShows": [
