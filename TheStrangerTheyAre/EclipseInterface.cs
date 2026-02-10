@@ -35,7 +35,7 @@ namespace TheStrangerTheyAre
         private float _timeSinceClosure;
         public bool isOpen;
 
-        private void Awake()
+        public void Awake()
         {
             isOpen = false;
             if (_rotatingElements.Length < 1 || _lightSensors.Length < 1)
@@ -49,7 +49,7 @@ namespace TheStrangerTheyAre
             }
         }
 
-        private void OnDestroy()
+        public void OnDestroy()
         {
             for (int i = 0; i < _lightSensors.Length; i++)
             {
@@ -77,7 +77,7 @@ namespace TheStrangerTheyAre
                 }
             }
         }
-        private void FixedUpdate()
+        public void FixedUpdate()
         {
             _timeSinceClosure += Time.deltaTime;
             bool flag = _canRotateWhileOpen;
@@ -101,7 +101,7 @@ namespace TheStrangerTheyAre
             }
         }
 
-        private void OnDetectLight()
+        public void OnDetectLight()
         {
             if (isOpen)
             {
@@ -112,7 +112,7 @@ namespace TheStrangerTheyAre
             base.enabled = true;
         }
 
-        private void OnDetectDarkness()
+        public void OnDetectDarkness()
         {
             float num = _rotatingElements[0].localRotation.eulerAngles.z % 360f;
             if (!_canRotateWhileOpen)

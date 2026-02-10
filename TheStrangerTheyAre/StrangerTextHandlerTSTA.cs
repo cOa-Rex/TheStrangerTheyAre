@@ -7,7 +7,7 @@ namespace TheStrangerTheyAre
     {
         private GameObject[] strangerDialogue = new GameObject[11]; // create new array of gameobjects to store all custom sim reels
 
-        private void Start()
+        public void Start()
         {
             for (int i = 0; i < 11; i++)
             {
@@ -20,7 +20,7 @@ namespace TheStrangerTheyAre
             return Locator.GetShipLogManager().IsFactRevealed("ANGLERS_EYE_ALIENTEXT_E2");
         }
 
-        private void Update()
+        public void Update()
         {
             foreach (GameObject dialogue in strangerDialogue)
             {

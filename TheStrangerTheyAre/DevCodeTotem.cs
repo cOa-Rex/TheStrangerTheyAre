@@ -66,7 +66,7 @@ namespace TheStrangerTheyAre
         private GameObject scientist;
 
         private GameObject prisFlame;
-        private void Awake()
+        public void Awake()
         {
             if (_interactReceiver != null)
             {
@@ -75,7 +75,7 @@ namespace TheStrangerTheyAre
             _selectedDial = 0;
         }
 
-        private void Start()
+        public void Start()
         {
             prisFlame = SearchUtilities.Find("RingWorld_Body/Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Sector_PrisonInterior/Interactibles_PrisonInterior/Prefab_IP_Sarcophagus/Prefab_IP_SleepingMummy_v2 (PRISONER)/Mummy_IP_ArtifactAnim/ArtifactPivot/Flame");
             if (_interactReceiver != null)
@@ -104,7 +104,7 @@ namespace TheStrangerTheyAre
             scientist = SearchUtilities.Find("NODE_SCIENTIST"); // gets everything related to scientist data clone
         }
 
-        private void OnDestroy()
+        public void OnDestroy()
         {
             if (_interactReceiver != null)
             {
@@ -140,7 +140,7 @@ namespace TheStrangerTheyAre
             fire.OnDreamCampfireExtinguished.Invoke();
         }
 
-        private void Update()
+        public void Update()
         {
             if (_movingSelector)
             {
@@ -223,7 +223,7 @@ namespace TheStrangerTheyAre
             }
         }
 
-        private void CheckForCode()
+        public void CheckForCode()
         {
             bool flag1 = true;
             bool flag2 = true;
@@ -285,7 +285,7 @@ namespace TheStrangerTheyAre
             }
         }
 
-        private void OnPressInteract()
+        public void OnPressInteract()
         {
             Locator.GetToolModeSwapper().UnequipTool();
             Locator.GetPlayerTransform().GetComponent<PlayerLockOnTargeting>().LockOn(_lockOnTransform, Vector3.zero);
@@ -301,7 +301,7 @@ namespace TheStrangerTheyAre
             _playerInteracting = true;
         }
 
-        private void CancelInteraction()
+        public void CancelInteraction()
         {
             Locator.GetPromptManager().RemoveScreenPrompt(_leftRightPrompt);
             Locator.GetPromptManager().RemoveScreenPrompt(_upDownPrompt);

@@ -8,7 +8,7 @@ namespace TheStrangerTheyAre
         [SerializeField]
         GameObject ring; // creates variable to store the ringed planet
 
-        private void Start()
+        public void Start()
         {
             // gets the endless eye volume
             var fireVol = GameObject.Find("EyeOfTheUniverse_Body/Sector_EyeOfTheUniverse/Sector_Campfire/Volumes_Campfire"); // gets the quantum planet with nh

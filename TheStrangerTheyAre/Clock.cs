@@ -15,7 +15,7 @@ public class Clock : MonoBehaviour
     [SerializeField]
     private OWAudioSource _rotationAudio;
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         for (int i = 0; i < _rotatingElements.Length; i++)
         {

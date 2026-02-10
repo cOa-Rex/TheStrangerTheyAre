@@ -8,7 +8,7 @@ namespace TheStrangerTheyAre
         private GameObject[] tornadoes = new GameObject[3]; // create new array of gameobjects to store all tornadoes
         private TornadoFluidVolume[] tornadoVolumes = new TornadoFluidVolume[3]; // create new array of all tornado fluid volumes
 
-        private void Start()
+        public void Start()
         {
             for (int i = 0; i < tornadoes.Length; i++)
             {

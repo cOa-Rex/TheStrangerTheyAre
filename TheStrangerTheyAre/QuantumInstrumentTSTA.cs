@@ -31,7 +31,7 @@ public class QuantumInstrumentTSTA : MonoBehaviour
     private static EyeSpawnPoint campfireSpawn; // to store vessel spawn point
     private static PlayerSpawner _spawner; // for spawning the player
 
-    private void Awake()
+    public void Awake()
     {
         _interactReceiver = GetComponent<InteractReceiver>();
         if (_interactReceiver != null)
@@ -40,7 +40,7 @@ public class QuantumInstrumentTSTA : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void Start()
     {
         if (_interactReceiver != null)
         {
@@ -55,7 +55,7 @@ public class QuantumInstrumentTSTA : MonoBehaviour
         sciSector = SearchUtilities.Find("EyeOfTheUniverse_Body/Sector_EyeOfTheUniverse/Sector_Campfire/InstrumentZones/ScientistSector").gameObject;
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         if (_interactReceiver != null)
         {
@@ -63,13 +63,13 @@ public class QuantumInstrumentTSTA : MonoBehaviour
         }
     }
 
-    private void OnPressInteract()
+    public void OnPressInteract()
     {
         Gather();
         _interactReceiver.DisableInteraction();
     }
 
-    private void Gather()
+    public void Gather()
     {
         float num = 1f;
         GlobalMessenger<float, float>.FireEvent("FlickerOffAndOn", num, 2f);
@@ -81,7 +81,7 @@ public class QuantumInstrumentTSTA : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void Update()
     {
         if (_gatherWithScope && !_waitToFlickerOut)
         {
@@ -102,7 +102,7 @@ public class QuantumInstrumentTSTA : MonoBehaviour
         }
     }
 
-    private void FinishGather()
+    public void FinishGather()
     {
         if (this.OnFinishGather != null)
         {

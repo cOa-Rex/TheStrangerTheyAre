@@ -20,7 +20,7 @@ public class CustomItem : OWItem
         base.Awake();
     }
 
-    private void Start()
+    public void Start()
     {
         base.enabled = false;
     }

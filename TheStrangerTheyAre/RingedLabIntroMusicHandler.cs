@@ -17,7 +17,7 @@ namespace TheStrangerTheyAre
             //Main.SetActive(false); // sets headed home volume inactive at the start of each loop
             defaultAudio = GameObject.Find("RingedLaboratory_Body/Sector/AudioVolume");
         }
-        private void Update()
+        public void Update()
         {
             if (Check() && !Check2())
             {

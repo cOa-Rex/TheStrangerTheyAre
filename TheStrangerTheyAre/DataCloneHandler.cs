@@ -159,7 +159,7 @@ namespace TheStrangerTheyAre
             hasWarped = true; // sets has warped to true so this doesn't run constantly (because it's being called in update)
         }
 
-        private void Update()
+        public void Update()
         {
             if (projector.GetComponent<DreamLibraryPedestal>().IsPowered() == true && isChecked == false)
             {

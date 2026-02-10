@@ -55,7 +55,7 @@ public class SealSocket : OWItemSocket
         OnAnimationComplete(isEndAnim);
     }
 
-    private void OnAnimationComplete(bool isEndAnim)
+    public void OnAnimationComplete(bool isEndAnim)
     {
         if (isEndAnim) {
             // should disable when it ends

@@ -15,7 +15,7 @@ public class HomeMusicHandler : MonoBehaviour
     {
         homeMusic.SetActive(true); // sets headed home volume inactive at the start of each loop
     }
-    private void Update()
+    public void Update()
     {
         if (Check() && !Check2())
         {

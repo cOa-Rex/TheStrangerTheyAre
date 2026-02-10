@@ -23,7 +23,7 @@ namespace TheStrangerTheyAre
 
         public bool hasControls => _interactReceiver != null;
 
-        private void Start()
+        public void Start()
         {
             if (_interactReceiver != null)
             {
@@ -36,7 +36,7 @@ namespace TheStrangerTheyAre
             monitorOn.SetActive(false);
         }
 
-        private void OnDestroy()
+        public void OnDestroy()
         {
             if (_interactReceiver != null)
             {
@@ -44,7 +44,7 @@ namespace TheStrangerTheyAre
             }
         }
 
-        private void OnPressInteract()
+        public void OnPressInteract()
         {
             if (_gearInterface != null)
             {

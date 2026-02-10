@@ -15,7 +15,7 @@ namespace TheStrangerTheyAre
         private AssetBundle _homeMoonBundle;
         private AssetBundle endingBundle;
 
-        private void Awake()
+        public void Awake()
         {
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
         }
@@ -44,7 +44,7 @@ namespace TheStrangerTheyAre
             Instance.ModHelper.Console.WriteLine(text, messageType);
         }
 
-        private void Start()
+        public void Start()
         {
             // Starting here, you'll have access to OWML's mod helper.
             ModHelper.Console.WriteLine($"My mod {nameof(TheStrangerTheyAre)} is loaded!", MessageType.Success);
@@ -81,7 +81,7 @@ namespace TheStrangerTheyAre
         }
 
 
-        private void OnSolarSystemLoaded()
+        public void OnSolarSystemLoaded()
         {
             if (NewHorizonsAPI.GetCurrentStarSystem().Equals("SolarSystem"))
             {

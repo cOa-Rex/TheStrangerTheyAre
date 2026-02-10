@@ -10,7 +10,7 @@ namespace TheStrangerTheyAre
 
         private bool isSwapped;
 
-        private void Start()
+        public void Start()
         {
             if (TheStrangerTheyAre.NewHorizonsAPI.GetCurrentStarSystem() == "SolarSystem")
             {
@@ -38,7 +38,7 @@ namespace TheStrangerTheyAre
             }
         }
 
-        private void Update()
+        public void Update()
         {
             if (!isSwapped && Check())
             {

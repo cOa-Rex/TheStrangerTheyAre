@@ -18,7 +18,7 @@ namespace TheStrangerTheyAre
         public const float blinkTime = 0.5f; // constant for blink time
         public const float animTime = blinkTime / 2f; // constant for blink animation time
 
-        private void Start()
+        public void Start()
         {
             archivesSpawn = SearchUtilities.Find("PreBramble_Archives_Body/Sector/PreBrambleBase/Interactibles/BrambleArchivesSpawn").GetComponent<SpawnPoint>();
             if (_interactReceiver != null)
@@ -27,7 +27,7 @@ namespace TheStrangerTheyAre
                 _interactReceiver.SetPromptText(UITextType.RotateGearPrompt);
             }
         }
-        private void OnPressInteract()
+        public void OnPressInteract()
         {
             StartCoroutine(UseShortcut());
         }

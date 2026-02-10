@@ -21,7 +21,7 @@ public class SkullItem : OWItem
         base.Awake();
     }
 
-    private void Start()
+    public void Start()
     {
         base.enabled = false;
     }

@@ -11,14 +11,14 @@ namespace TheStrangerTheyAre
         private GameObject qDoorOpen;
 
         EclipseInterface eclipse;
-        private void Start()
+        public void Start()
         {
             var distantEnigma = TheStrangerTheyAre.NewHorizonsAPI.GetPlanet("Distant Enigma"); // gets the quantum planet with nh
 
             eclipse = distantEnigma.transform.Find("Sector-2/EnigmaInterface/Prefab_IP_Door_Interface").GetComponent<EclipseInterface>();
         }
 
-        private void Update()
+        public void Update()
         {
             if (eclipse.isOpen)
             {

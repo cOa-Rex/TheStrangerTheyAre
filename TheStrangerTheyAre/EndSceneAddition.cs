@@ -15,7 +15,7 @@ namespace TheStrangerTheyAre
         private static GameObject[] axolotl = new GameObject[3];
         public static SpriteRenderer[] crabSprites = new SpriteRenderer[4];
 
-        private void Awake()
+        public void Awake()
         {
             instance = this;
             Activate();

@@ -25,7 +25,7 @@ namespace TheStrangerTheyAre
             GlobalMessenger<float>.RemoveListener("PlayerCameraEnterWater", OnCameraEnterWater);
         }
 
-        private void OnCameraEnterWater(float _)
+        public void OnCameraEnterWater(float _)
         {
             if (Locator.GetDreamWorldController() != null
                 && Locator.GetDreamWorldController().IsInDream()

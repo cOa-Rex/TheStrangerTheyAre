@@ -12,14 +12,14 @@ namespace TheStrangerTheyAre
         private CodeTotemPuzzleHandler codeTotemPuzzle;
         private bool areObjectsOn;
 
-        private void Start()
+        public void Start()
         {
             areObjectsOn = false;
             codeTotemPuzzle = SearchUtilities.Find("Sector/PreBrambleBase/Interactibles/CodePuzzle").GetComponent<CodeTotemPuzzleHandler>();
             ToggleObjects(true);
         }
 
-        private void Update()
+        public void Update()
         {
             if (codeTotemPuzzle.areAllCodesMatched)
             {
@@ -31,7 +31,7 @@ namespace TheStrangerTheyAre
             }
         }
 
-        private void ToggleObjects(bool isOn)
+        public void ToggleObjects(bool isOn)
         {
             if (isOn)
             {

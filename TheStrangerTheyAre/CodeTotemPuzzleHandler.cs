@@ -16,7 +16,7 @@ namespace TheStrangerTheyAre
         public bool areAllCodesMatched;
         private bool isActive;
 
-        private void Start()
+        public void Start()
         {
             // define booleans
             areAllCodesMatched = false;
@@ -31,22 +31,22 @@ namespace TheStrangerTheyAre
             codeControllers[1].OnClose += OnSecondCodeUnsolved;
         }
 
-        private void OnFirstCodeSolved()
+        public void OnFirstCodeSolved()
         {
             isFirstCodeSolved = true;
         }
 
-        private void OnSecondCodeSolved()
+        public void OnSecondCodeSolved()
         {
             isSecondCodeSolved = true;
         }
 
-        private void OnFirstCodeUnsolved()
+        public void OnFirstCodeUnsolved()
         {
             isFirstCodeSolved = false;
         }
 
-        private void OnSecondCodeUnsolved()
+        public void OnSecondCodeUnsolved()
         {
             isSecondCodeSolved = false;
         }
@@ -63,7 +63,7 @@ namespace TheStrangerTheyAre
             }
         }
 
-        private void Update()
+        public void Update()
         {
             if (AreBothSolved() && !isActive)
             {
