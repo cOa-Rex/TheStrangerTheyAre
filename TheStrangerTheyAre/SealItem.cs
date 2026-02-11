@@ -2,7 +2,8 @@
 using UnityEngine;
 
 namespace TheStrangerTheyAre;
-public class Seals : OWItem
+
+public class SealItem : OWItem
 {
     [SerializeField]
     public int sealID;
@@ -12,7 +13,7 @@ public class Seals : OWItem
     public override void Awake()
     {
         base.Awake();
-        _type = ItemType.SharedStone;
+        _type = TheStrangerTheyAre.SealItemType;
     }
 
     public override string GetDisplayName()

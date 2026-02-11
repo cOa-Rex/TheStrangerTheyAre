@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
+using NewHorizons.Utility.OWML;
 using OWML.Common;
 using OWML.ModHelper;
+using OWML.Utils;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -14,6 +16,10 @@ namespace TheStrangerTheyAre
         private GameObject titleRigidBody;
         private AssetBundle _homeMoonBundle;
         private AssetBundle endingBundle;
+
+        public static readonly ItemType CloakMineralItemType = EnumUtils.Create<ItemType>("CloakMineral");
+        public static readonly ItemType GhostbirdSkullItemType = EnumUtils.Create<ItemType>("GhostbirdSkull");
+        public static readonly ItemType SealItemType = EnumUtils.Create<ItemType>("Seal");
 
         public void Awake()
         {

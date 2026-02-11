@@ -16,7 +16,7 @@ public class SealSocket : OWItemSocket
     public override void Awake()
     {
         base.Awake();
-        _acceptableType = ItemType.SharedStone;
+        _acceptableType = TheStrangerTheyAre.SealItemType;
         activeObjects.SetActive(false);
         inactiveObjects.SetActive(true);
     }
@@ -26,7 +26,7 @@ public class SealSocket : OWItemSocket
         if (base.PlaceIntoSocket(item))
         {
             item.transform.localScale = item.transform.localScale*2.5f;
-            if (item.GetComponent<Seals>().sealID == sealSocketID)
+            if (item.GetComponent<SealItem>().sealID == sealSocketID)
             {
                 activeObjects.SetActive(true);
                 inactiveObjects.SetActive(false);

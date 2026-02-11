@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using UnityEngine;
-using OWML.Common;
+﻿using UnityEngine;
 using NewHorizons.Utility.Files;
 
 namespace TheStrangerTheyAre;
-public class CustomItemSocket : OWItemSocket
+
+public class CloakMineralMachineItemSocket : CloakMineralItemSocket
 {
     [SerializeField]
     OWAudioSource audio;
@@ -18,7 +17,6 @@ public class CustomItemSocket : OWItemSocket
    public override void Awake()
     {
         base.Awake();
-        _acceptableType = ItemType.Scroll;
         activeShard = GameObject.Find("ENIGMA_SHARD_WEAK"); // finds the shard that should be active upon inserting the mineral
         inactiveShard = GameObject.Find("ENIGMA_SHARD"); // finds the shard that should be active upon removing the mineral
         activeShard.SetActive(false);
@@ -28,7 +26,7 @@ public class CustomItemSocket : OWItemSocket
 
     public override bool PlaceIntoSocket(OWItem item)
     {
-        if (base.PlaceIntoSocket(item) && item.GetComponent<CustomItem>().isCloakMineral == true)
+        if (base.PlaceIntoSocket(item))
         {
             AudioUtilities.SetAudioClip(audio, "assets/Audio/activatemachine.ogg", TheStrangerTheyAre.Instance);
             effects.SetActive(true);

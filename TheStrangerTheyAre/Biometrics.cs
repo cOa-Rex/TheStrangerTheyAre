@@ -42,8 +42,7 @@ namespace TheStrangerTheyAre
 
             if (isInTrigger)
             {
-                if (Locator.GetToolModeSwapper().GetItemCarryTool().GetHeldItemType() == ItemType.ConversationStone &&
-                    Locator.GetToolModeSwapper().GetItemCarryTool().GetHeldItem().GetComponent<SkullItem>().isSkull == true)
+                if (Locator.GetToolModeSwapper().GetItemCarryTool().GetHeldItemType() == TheStrangerTheyAre.GhostbirdSkullItemType)
                 {
                     scanner.SetActive(false);
                     pass.SetActive(true);

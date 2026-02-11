@@ -350,9 +350,6 @@
 				"path": "Assets/Item_CloakMineral.prefab",
 				"parentPath": "Sector/BrambleMuseum/Interactables/Tube_Mineral/MineralSocket",
 				"isRelativeToParent": true,
-				"position": {
-					"z": 0.5
-				},
 				"keepLoaded": true
 			},
 			{
@@ -1748,13 +1745,18 @@
 			},
 			{
 				"id": "ANGLERS_EYE_OBSERVE",
+				"cloaked": true,
 				"parentPath": "Sector/ObservationDeck_DBM",
 				"isRelativeToParent": true
 			},
 			{
 				"id": "ANGLERS_EYE_MINERAL",
+				"cloaked": true,
 				"parentPath": "Sector/BrambleMuseum/Interactables/Tube_Mineral/MineralSocket",
-				"isRelativeToParent": true
+				"isRelativeToParent": true,
+				"position": {
+					"z": -0.5
+				}
 			}
 		]
 	},
