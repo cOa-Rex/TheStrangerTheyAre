@@ -1182,10 +1182,10 @@
       "Inputting the codes seemed to play a sound and change the mural on the wall. It's likely that something changed in the real world.": "コードを入力すると音が鳴り、壁の壁画が変化したようだ。現実世界で何かが変化した可能性が高い。",
       "The two totems are the key to opening the mineral's display case.": "2つのトーテムがミネラルの展示ケースを開くキーである。",
       "Archives Left Vision Torch": "記録保管所左側のビジョントーチ",
-      "A vision torch can be seen kneeling on the left totem.": "左側のトーテムにひざまずくビジョントーチが見える。",
+      "A vision torch can be seen kneeling on the left totem.": "左側のトーテムに寄りかかるビジョントーチが見える。",
       "A vision torch on the left showed me where I can find a code for the totem.": "左側のビジョントーチがトーテム用のコードをどこで見つけられるかを示してくれた。",
       "Archives Right Vision Torch": "記録保管所右側のビジョントーチ",
-      "A vision torch can be seen kneeling on the right totem.": "右側のトーテムにひざまずくビジョントーチが見える。",
+      "A vision torch can be seen kneeling on the right totem.": "右側のトーテムに寄りかかるビジョントーチが見える。",
       "A vision torch on the right showed me where I can find a code for the totem.": "右側のビジョントーチがトーテム用のコードをどこで見つけられるかを示してくれた。",
       "Isolated Swamp Code": "孤立したぬかるみのコード",
       "Right Code Location": "右側のコードの場所",
@@ -1341,7 +1341,7 @@
       "This is a data clone of The Scientist before he left The Stranger, so he has no idea about what happened to him afterwards.": "これは窮理人が流れ者を去る前のデータクローンなので、その後自身に何が起こったかについては彼は全く知らない。",
       "The Scientist was the head of the scientific committee, and even invented the Vision Torch and discovered green fire technology. Against his will, he was forced to help destroy the planet. He also would have never approved of the simulation if he was still on the ship at that time.": "窮理人は窮理部門の責任者で、ビジョントーチを発明し、緑の炎の技術を発見した。彼の意思に反して彼は惑星破壊を手伝うことを強制された。また、彼がその当時まだ船にいたなら模擬現実を決して認めなかっただろう。",
       "The Scientist explains more about his family and how they died due to poor enviromnmental factors on The Stranger.": "窮理人は自身の家族についてさらに詳しく説明し、流れ者上の劣悪な環境因子によってどのように亡くなったかを語った。",
-      "The Scientist describes life before his kind found The Eye. They were connected with nature, were very spiritual, and lived in happiness under the Ringed Giant. It was their superstition which caused them to destroy their home planet, just to reach The Eye. He also mentions that all animals from their old planet went extinct faster than they could preserve them.": "窮理人は自身の種族が眼を見つける前の生活について説明してくれた。彼らは自然と繋がり、非常に霊的で、環の巨人の下で幸せに暮らしていた。眼に到達するためだけに故郷の惑星を破壊したのは、彼らの迷信によるものだった。また、彼は古い故郷の動物たちが彼らが保存できるよりも速く絶滅したとも述べている。",
+      "The Scientist describes life before his kind found The Eye. They were connected with nature, were very spiritual, and lived in happiness under the Ringed Giant. It was their superstition which caused them to destroy their home planet, just to reach The Eye. He also mentions that all animals from their old planet went extinct faster than they could preserve them.": "窮理人は自身の種族が眼を見つける前の生活について説明してくれた。彼らは自然と繋がり、非常に霊的で、環の巨人の下で幸せに暮らしていた。眼に到達するためだけに故郷の惑星を破壊したのは、彼らの迷信によるものだった。また、彼は古い故郷の動物たちが彼らが保存できるよりも早く絶滅したとも述べている。",
       "The Scientist got very uncomfortable when I brought up The Prisoner, but he did tell me that some of them miss him deep down. The Scientist also thinks it was too early for The Eye's signal to be let out.": "囚人の話をすると窮理人はとても不快そうであったが、住人の何人かは心の奥底で囚人を恋しく思っていると語ってくれた。窮理人はまた、眼の信号を解放するには時期が早すぎたと考えている。",
       "The Scientist explained how terrifying life was on The Stranger. Many Strangers got so insane, they took their own lives. And if not, they starved to death due to lack of food. There were 55 crew members. 20 died, and 33 more got trapped in the simulation.": "窮理人は流れ者での生活がいかに恐ろしかったかを説明した。多くの住人たちは狂気に陥り、自ら命を絶った。そうでなければ、食料不足で餓死した。乗組員は55人いた。20人が死亡し、さらに33人が模擬現実に閉じ込められた。",
       "The Scientist also explains cloaked techonolgy. It can work on your ship without any customizations.": "窮理人はクローキング技術についても説明した。それは特別な設定をせずとも船に適用できるとのことだ。",
@@ -1522,7 +1522,9 @@
       "Sizzling Sands": "焼けつく砂",
       "Ringed Giant": "環の巨人",
       "Strangers' Homeworld": "流れ者の故郷",
-      "Stranded Vessel": "漂流船"
+      "Stranded Vessel": "漂流船",
+
+      "As The Stranger continues to coast along the empty void, you spend the rest of eternity with your new, strange family.": "流れ者が虚空に向かって進み続ける間、あなたは新しい風変わりな家族とともに永遠の余生を過ごします。"
     },
     "OtherDictionary": {
       "SealDisplayName": "{0}の封印",
