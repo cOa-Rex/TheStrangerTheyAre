@@ -97,7 +97,7 @@
       "Perhaps we are, and they're keeping it classified to keep us under control. Maybe it's best we follow their orders, to protect our homeworld.": "もしかすると本当に危険なのかもしれないし、統制を保つために機密にしているのかもしれない。故郷を守るためには、命令に従うのが最善かもしれない。&lt;i&gt;&lt;/i&gt;",
   
       //Signal
-      "NOTE: To find the white ship, use the gear interface to activate a signal and follow it.": "注意：白い船を見つけるには、歯車インターフェースを使って信号を発信し、それを追跡せよ。&lt;i&gt;&lt;/i&gt;",
+      "NOTE: To find the white ship, use the gear interface to activate a signal and follow it.": "注意：白い船を見つけるには、歯車インターフェースを使って信号を有効化し、いずれかの周波数に追加されたその信号を追跡せよ。&lt;i&gt;&lt;/i&gt;",
   
       //Vessel1
       "The enemy behind the anomaly has finally shown its face! A massive white ship capable of warp technology has warped to our system.": "異常現象の背後にいる敵がついにその姿を現した！ワープ技術を持つ巨大な白い船が我々の星系にワープしてきた。&lt;i&gt;&lt;/i&gt;",
@@ -1236,7 +1236,7 @@
       "The Strangers' Inhabitants saw The Vessel warp into their home system. Feeling threatened, they were not afraid to call The Nomai their enemy.": "流れ者の住人たちは、Nomaiの船が彼らの母星系にワープするのを目撃した。危険を感じた彼らはNomaiを敵と呼ぶことを恐れなかった。",
       "After quickly gathering reconnisance, they became well aware that The Vessel was unarmed. Despite the Nomai coming in peace, The Strangers' Inhabitants proceeded with their attack plan.": "素早く偵察を行った後、彼らはNomaiの船が武装していないことを十分に認識した。Nomaiが平和的に来たにもかかわらず、流れ者の住人たちは攻撃計画を進めた。",
       "Some text claims that if the attack is successful, they will put a cloak around The Vessel so no others could find it.": "ある文章によると、攻撃が成功した場合、他の者が見つけられないようにNomaiの船にクロークをかけるとのことだ。",
-      "A set of text by the gear interface states that to find The Vessel, you have to turn on the signal with the interface and follow the signal.": "インターフェースそばの文章によると、Nomaiの船を見つけるためには、インターフェースで信号をオンにしてその信号を追跡する必要があるとのことだ。",
+      "A set of text by the gear interface states that to find The Vessel, you have to turn on the signal with the interface and follow the signal.": "インターフェースそばの文章によると、Nomaiの船を見つけるためには、インターフェースで信号をオンにして、いずれかの周波数に追加されたその信号を追跡する必要があるとのことだ。",
   
       //desert
       "Sizzling Sands": "焼けつく砂",
