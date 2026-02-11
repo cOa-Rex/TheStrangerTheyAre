@@ -2,6 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/translation_schema.json",
     "DialogueDictionary": {
       "The Scientist": "窮理人",
+      "The Prisoner": "囚人",
       //Desk
       "Day 42: The resources we have obtained from this system's terrestrial planet are helpful, especially the fish we have found in one of the ponds.": "42日目:この星系の温暖な固体惑星から得た資源、特に池の1つで見つけた魚が有用である。&lt;i&gt;&lt;/i&gt;",
   
