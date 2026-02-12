@@ -6,53 +6,53 @@ namespace TheStrangerTheyAre;
 public class SealItem : OWItem
 {
     [SerializeField]
-    public int sealID;
-    [SerializeField]
-    private string sealName;
+    public SealID sealID;
+
+    private string _sealName;
+    private string _sealFactID;
 
     public override void Awake()
     {
         base.Awake();
         _type = TheStrangerTheyAre.SealItemType;
+        _sealName = GetSealName(sealID);
+        _sealFactID = GetSealFactID(sealID);
     }
 
     public override string GetDisplayName()
     {
-        return String.Format(TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForOtherText("SealDisplayName"), TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForUI(sealName));
-    }
-
-    public override void DropItem(Vector3 position, Vector3 normal, Transform parent, Sector sector, IItemDropTarget customDropTarget)
-    {
-        base.DropItem(position, normal, parent, sector, customDropTarget);
+        return string.Format(TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForOtherText("SealDisplayName"), TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForUI(_sealName));
     }
 
     public override void PickUpItem(Transform holdTranform)
     {
         base.PickUpItem(holdTranform);
-        switch (sealName)
-        {
-            case "Sizzling Sands":
-                Locator.GetShipLogManager().RevealFact("DESERT_SEAL_E");
-                break;
-            case "Ringed Giant":
-                Locator.GetShipLogManager().RevealFact("RING_SEAL_E");
-                break;
-            case "Velvet Vortex":
-                Locator.GetShipLogManager().RevealFact("CRIMSON_SEAL_E");
-                break;
-            case "Burning Bombardier":
-                Locator.GetShipLogManager().RevealFact("VOLCANO_SEAL_E");
-                break;
-            case "Distant Enigma":
-                Locator.GetShipLogManager().RevealFact("QUANTUM_SEAL_E");
-                break;
-            default:
-                break;
-        }
+        Locator.GetShipLogManager().RevealFact(_sealFactID);
     }
 
-    public override void SocketItem(Transform socketTransform, Sector sector)
+    public static string GetSealName(SealID id)
     {
-        base.SocketItem(socketTransform, sector);
+        return id switch
+        {
+            SealID.Desert => "Sizzling Sands",
+            SealID.Ring => "Ringed Giant",
+            SealID.Crimson => "Velvet Vortex",
+            SealID.Volcano => "Burning Bombardier",
+            SealID.Quantum => "Distant Enigma",
+            _ => throw new ArgumentException("Invalid SealID")
+        };
+    }
+
+    public static string GetSealFactID(SealID id)
+    {
+        return id switch
+        {
+            SealID.Desert => "DESERT_SEAL_E",
+            SealID.Ring => "RING_SEAL_E",
+            SealID.Crimson => "CRIMSON_SEAL_E",
+            SealID.Volcano => "VOLCANO_SEAL_E",
+            SealID.Quantum => "QUANTUM_SEAL_E",
+            _ => throw new ArgumentException("Invalid SealID")
+        };
     }
 }

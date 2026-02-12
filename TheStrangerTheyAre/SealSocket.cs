@@ -7,7 +7,7 @@ public class SealSocket : OWItemSocket
     [SerializeField]
     GameObject activeObjects;
     [SerializeField]
-    public int sealSocketID;
+    public SealID sealSocketID;
     [SerializeField]
     GameObject inactiveObjects;
 
