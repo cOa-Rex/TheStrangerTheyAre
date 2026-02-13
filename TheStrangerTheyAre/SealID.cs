@@ -2,9 +2,10 @@
 
 public enum SealID
 {
-    Desert = 0,
-    Ring = 1,
-    Crimson = 2,
-    Volcano = 3,
-    Quantum = 4
+    None = 0,
+    Desert = 1,
+    Ring = 2,
+    Crimson = 3,
+    Volcano = 4,
+    Quantum = 5
 }
