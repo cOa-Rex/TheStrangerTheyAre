@@ -6,21 +6,22 @@ namespace TheStrangerTheyAre;
 public class CloakMineralMachineItemSocket : CloakMineralItemSocket
 {
     [SerializeField]
-    OWAudioSource audio;
+    public OWAudioSource audio;
     [SerializeField]
-    GameObject effects;
+    public GameObject effects;
     [SerializeField]
-    ElectricityEffect electricEffect;
+    public ElectricityEffect electricEffect;
 
-    GameObject activeShard;
-    GameObject inactiveShard;
+    private GameObject _activeShard;
+    private GameObject _inactiveShard;
+    
    public override void Awake()
     {
         base.Awake();
-        activeShard = GameObject.Find("ENIGMA_SHARD_WEAK"); // finds the shard that should be active upon inserting the mineral
-        inactiveShard = GameObject.Find("ENIGMA_SHARD"); // finds the shard that should be active upon removing the mineral
-        activeShard.SetActive(false);
-        inactiveShard.SetActive(true);
+        _activeShard = GameObject.Find("ENIGMA_SHARD_WEAK"); // finds the shard that should be active upon inserting the mineral
+        _inactiveShard = GameObject.Find("ENIGMA_SHARD"); // finds the shard that should be active upon removing the mineral
+        _activeShard.SetActive(false);
+        _inactiveShard.SetActive(true);
         effects.SetActive(false);
     }
 
@@ -32,8 +33,8 @@ public class CloakMineralMachineItemSocket : CloakMineralItemSocket
             effects.SetActive(true);
             electricEffect.Play();
             audio.Play();
-            activeShard.SetActive(true);
-            inactiveShard.SetActive(false);
+            _activeShard.SetActive(true);
+            _inactiveShard.SetActive(false);
             return true;
         }
         return false;
@@ -48,8 +49,8 @@ public class CloakMineralMachineItemSocket : CloakMineralItemSocket
             audio.Play();
         }
         OWItem oWItem = base.RemoveFromSocket();
-        activeShard.SetActive(false);
-        inactiveShard.SetActive(true);
+        _activeShard.SetActive(false);
+        _inactiveShard.SetActive(true);
         return oWItem;
     }
 }

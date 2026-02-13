@@ -6,8 +6,8 @@ namespace TheStrangerTheyAre
     {
         [SerializeField]
         private SealSocket[] sockets;
-        
-        void Update()
+
+        public void Update()
         {
             // all or nothing achievement
             int temp = 0;

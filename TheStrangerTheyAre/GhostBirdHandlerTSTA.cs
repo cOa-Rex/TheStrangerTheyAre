@@ -7,25 +7,26 @@ namespace TheStrangerTheyAre
     public class GhostBirdHandlerTSTA : MonoBehaviour
     {
         [SerializeField]
-        private GameObject[] ghostBirds; // array of all ghostbirds, set in unity
+        public GameObject[] ghostBirds; // array of all ghostbirds, set in unity
         [SerializeField]
-        private GameObject[] initialPos; // array for storing each starting position
-        private bool areDeadZone1; // boolean that tests if the ghosts have died.
-        private bool areDeadZone2; // boolean that tests if the ghosts have died.
-        private bool isCaught; // boolean to check if player is caught
+        public GameObject[] initialPos; // array for storing each starting position
 
-        void Awake()
+        private bool _areDeadZone1; // boolean that tests if the ghosts have died.
+        private bool _areDeadZone2; // boolean that tests if the ghosts have died.
+        private bool _isCaught; // boolean to check if player is caught
+
+        public void Awake()
         {
             GlobalMessenger.AddListener("ExitDreamWorld", OnExitDreamWorld); // checks if player leaves the sim
             GlobalMessenger.AddListener("PlayerGrabbedByGhost", OnPlayerGrabbedByGhost); // checks if player is caught by ghostbird
         }
 
-        void Start()
+        public void Start()
         {
             // set all bools to false by default
-            areDeadZone1 = false;
-            areDeadZone2 = false;
-            isCaught = false;
+            _areDeadZone1 = false;
+            _areDeadZone2 = false;
+            _isCaught = false;
 
             // get ghost positions
             for (int i = 0; i < ghostBirds.Length; i++)
@@ -38,11 +39,11 @@ namespace TheStrangerTheyAre
             }
         }
 
-        void OnExitDreamWorld()
+        public void OnExitDreamWorld()
         {
             for (int i = 0; i < ghostBirds.Length; i++)
             {
-                isCaught = false;
+                _isCaught = false;
                 if (ghostBirds[i] != null)
                 {
                     ghostBirds[i].transform.position = initialPos[i].transform.position; // on dw exit, sets to starting pos of each ghostbird
@@ -53,12 +54,12 @@ namespace TheStrangerTheyAre
             }
         }
 
-        void OnPlayerGrabbedByGhost()
+        public void OnPlayerGrabbedByGhost()
         {
-            isCaught = true;
+            _isCaught = true;
         }
 
-        void Update()
+        public void Update()
         {
             if (Locator._toolModeSwapper.GetItemCarryTool().GetHeldItem() is DreamLanternItem lantern && lantern._lanternController._lit)
             {
@@ -72,7 +73,7 @@ namespace TheStrangerTheyAre
                 }
             }
 
-            if (TimeLoop.GetSecondsElapsed() > 790 && !areDeadZone1)
+            if (TimeLoop.GetSecondsElapsed() > 790 && !_areDeadZone1)
             {
                 for (int i = 0; i < 2; i++)
                 {
@@ -82,8 +83,8 @@ namespace TheStrangerTheyAre
                         ghostBirds[i].SetActive(false);
                     }
                 };
-                areDeadZone1 = true; // set dead boolean for zone 1 true
-            } else if (TimeLoop.GetSecondsElapsed() > 1230 && !areDeadZone2)
+                _areDeadZone1 = true; // set dead boolean for zone 1 true
+            } else if (TimeLoop.GetSecondsElapsed() > 1230 && !_areDeadZone2)
             {
                 for (int i = 2; i < 8; i++)
                 {
@@ -92,10 +93,10 @@ namespace TheStrangerTheyAre
                         ghostBirds[i].GetComponent<GhostBrain>().Die(); // kill ghostbirds linked to zone 2
                     }
                 };
-                areDeadZone2 = true; // set dead boolean for zone 2 true
+                _areDeadZone2 = true; // set dead boolean for zone 2 true
             }
         }
-        void Sneak()
+        public void Sneak()
         {
             foreach (var bird in ghostBirds)
             {
@@ -107,13 +108,13 @@ namespace TheStrangerTheyAre
             }
         }
 
-        void NoSneak()
+        public void NoSneak()
         {
             foreach (var bird in ghostBirds)
             {
                 if (bird != null)
                 {
-                    if (bird.GetComponentInChildren<CompoundLightSensor>().IsIlluminated() && !isCaught)
+                    if (bird.GetComponentInChildren<CompoundLightSensor>().IsIlluminated() && !_isCaught)
                     {
                         Vector3 giantTrigger = new Vector3(7, 7, 7);
                         bird.transform.Find("ContactTrigger/ContactTrigger_Core").gameObject.transform.localScale = giantTrigger;

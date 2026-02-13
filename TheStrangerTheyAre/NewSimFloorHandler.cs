@@ -6,38 +6,40 @@ namespace TheStrangerTheyAre
     public class NewSimFloorHandler : MonoBehaviour
     {
         [SerializeField]
-        NewSimFloorHandler[] waterTriggers; // all dreamzone water triggers, obtained from unity.
+        public NewSimFloorHandler[] waterTriggers; // all dreamzone water triggers, obtained from unity.
 
-        GameObject floorDZ4; // creates variable to store the floor of dz4
-        GameObject waterDZ4; // creates variable to store the water in dz4
-        GameObject liquidDZ4; // creates variable to store the liquid volume of dz4
-        public bool isInside = false;
+        private GameObject _floorDZ4; // creates variable to store the floor of dz4
+        private GameObject _waterDZ4; // creates variable to store the water in dz4
+        private GameObject _liquidDZ4; // creates variable to store the liquid volume of dz4
 
-        void Start()
+        private bool _isInside = false;
+        public bool isInside => _isInside;
+
+        public void Start()
         {
             GlobalMessenger.AddListener("ExitDreamWorld", OnExitDreamWorld); // checks if player leaves the sim
-            waterDZ4 = SearchUtilities.Find("WaterPlane_DreamZone4"); // gets the underwater floor in the fourth sector of the simulation
-            floorDZ4 = SearchUtilities.Find("DreamWorld_Body/Sector_DreamWorld/Sector_DreamZone_4/Geo_DreamZone_4_Upper/Terrain_IP_Dreamworld_Floorbed"); // gets the underwater floor in the fourth sector of the simulation
-            liquidDZ4 = SearchUtilities.Find("DreamWorld_Body/Sector_DreamWorld/Volumes_DreamWorld/DreamRiverFluidVolume"); // gets the underwater floor in the fourth sector of the simulation
+            _waterDZ4 = SearchUtilities.Find("WaterPlane_DreamZone4"); // gets the underwater floor in the fourth sector of the simulation
+            _floorDZ4 = SearchUtilities.Find("DreamWorld_Body/Sector_DreamWorld/Sector_DreamZone_4/Geo_DreamZone_4_Upper/Terrain_IP_Dreamworld_Floorbed"); // gets the underwater floor in the fourth sector of the simulation
+            _liquidDZ4 = SearchUtilities.Find("DreamWorld_Body/Sector_DreamWorld/Volumes_DreamWorld/DreamRiverFluidVolume"); // gets the underwater floor in the fourth sector of the simulation
         }
 
-        void OnExitDreamWorld()
+        public void OnExitDreamWorld()
         {
             // dreamzone water enabling
-            waterDZ4.SetActive(true); // activates object when player leaves the trigger
-            floorDZ4.SetActive(true); // activates object when player leaves the trigger
-            liquidDZ4.SetActive(true); // activates object when player leaves the trigger
+            _waterDZ4.SetActive(true); // activates object when player leaves the trigger
+            _floorDZ4.SetActive(true); // activates object when player leaves the trigger
+            _liquidDZ4.SetActive(true); // activates object when player leaves the trigger
         }
 
         public virtual void OnTriggerEnter(Collider hitCollider)
         {
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                isInside = true; // enable trigger boolean
+                _isInside = true; // enable trigger boolean
                 // dreamzone water disabling
-                waterDZ4.SetActive(false); // deactivates object when inside the trigger
-                floorDZ4.SetActive(false); // deactivates object when inside the trigger
-                liquidDZ4.SetActive(false); // deactivates object when inside the trigger
+                _waterDZ4.SetActive(false); // deactivates object when inside the trigger
+                _floorDZ4.SetActive(false); // deactivates object when inside the trigger
+                _liquidDZ4.SetActive(false); // deactivates object when inside the trigger
             }
         }
 
@@ -45,7 +47,7 @@ namespace TheStrangerTheyAre
         {
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                isInside = false; // disable trigger boolean
+                _isInside = false; // disable trigger boolean
                 int temp = 0; // temporary variable to count active triggers, set to 0 each time before incrementing.
                 foreach (NewSimFloorHandler trigger in waterTriggers)
                 {
@@ -59,9 +61,9 @@ namespace TheStrangerTheyAre
                 if (temp < 1)
                 {
                     // dreamzone water enabling
-                    waterDZ4.SetActive(true); // activates object when player leaves the trigger
-                    floorDZ4.SetActive(true); // activates object when player leaves the trigger
-                    liquidDZ4.SetActive(true); // activates object when player leaves the trigger
+                    _waterDZ4.SetActive(true); // activates object when player leaves the trigger
+                    _floorDZ4.SetActive(true); // activates object when player leaves the trigger
+                    _liquidDZ4.SetActive(true); // activates object when player leaves the trigger
                 }
             }
         }

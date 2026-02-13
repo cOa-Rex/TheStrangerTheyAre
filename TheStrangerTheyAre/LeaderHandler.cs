@@ -8,38 +8,38 @@ namespace TheStrangerTheyAre
     public class LeaderHandler : MonoBehaviour
     {
         [SerializeField]
-        GameObject leaderDialogueIntro; // leader intro dialogue
+        public GameObject leaderDialogueIntro; // leader intro dialogue
         [SerializeField]
-        GameObject leaderDialogueAfter; // leader dialogue after vision
+        public GameObject leaderDialogueAfter; // leader dialogue after vision
         [SerializeField]
-        GameObject leaderDialogueIntroKnowName; // leader intro, but you know cypress's name
+        public GameObject leaderDialogueIntroKnowName; // leader intro, but you know cypress's name
         [SerializeField]
-        GameObject[] othersDialogue; // all the others' dialogue
+        public GameObject[] othersDialogue; // all the others' dialogue
 
-        GameObject leader; // leader in the partyhouse
-        GameObject vesselLeader; // leader in the vessel
-        GameObject vessel; // the vessel itself
-        GameObject vesselReveal; // the shiplog condition to reveal vessel
-        GameObject music; // final end times music
-        VesselSpawnPoint vesselSpawn; // to store vessel spawn point
+        private GameObject _leader; // leader in the partyhouse
+        private GameObject _vesselLeader; // leader in the vessel
+        private GameObject _vessel; // the vessel itself
+        private GameObject _vesselReveal; // the shiplog condition to reveal vessel
+        private GameObject _music; // final end times music
+        private VesselSpawnPoint _vesselSpawn; // to store vessel spawn point
 
         protected PlayerSpawner _spawner; // for spawning the player
-        private bool hasWarped; // sets boolean to make sure warp doesn't happen repeatedly on update.
+        private bool _hasWarped; // sets boolean to make sure warp doesn't happen repeatedly on update.
         public const float blinkTime = 0.5f; // constant for blink time
         public const float animTime = blinkTime / 2f; // constant for blink animation time
 
-        void Start()
+        public void Start()
         {
             // getting gameobjects
-            leader = SearchUtilities.Find("StrangersHomeworld_Body/Sector/EntryAndPartyHouse/Sector_PartyHouse/Ghostbird_NPCs/Prefab_IP_GhostBird_ScientistDescendant");
-            vesselLeader = SearchUtilities.Find("RingedGiant_Body/Sector/Prefab_IP_GhostBird_ScientistDescendant_Vessel1");
-            vessel = SearchUtilities.Find("RingedGiant_Body/Sector/Vessel_Body");
-            music = SearchUtilities.Find("FinalEndTimes_STR");
+            _leader = SearchUtilities.Find("StrangersHomeworld_Body/Sector/EntryAndPartyHouse/Sector_PartyHouse/Ghostbird_NPCs/Prefab_IP_GhostBird_ScientistDescendant");
+            _vesselLeader = SearchUtilities.Find("RingedGiant_Body/Sector/Prefab_IP_GhostBird_ScientistDescendant_Vessel1");
+            _vessel = SearchUtilities.Find("RingedGiant_Body/Sector/Vessel_Body");
+            _music = SearchUtilities.Find("FinalEndTimes_STR");
 
-            hasWarped = false; // sets has warped boolean to false at start of every loop
+            _hasWarped = false; // sets has warped boolean to false at start of every loop
             leaderDialogueAfter.SetActive(false);
 
-            if (vessel != null)
+            if (_vessel != null)
             {
                 Locator.GetShipLogManager().RevealFact("HOME_VESSEL");
             } else
@@ -63,21 +63,21 @@ namespace TheStrangerTheyAre
             GlobalMessenger.FireEvent("PlayerBlink"); // fires an event for the player blinking
 
             // move leader to vessel
-            leader.SetActive(false);
-            vesselLeader.SetActive(true);
+            _leader.SetActive(false);
+            _vesselLeader.SetActive(true);
             
             // warp to vessel
-            vesselSpawn = SearchUtilities.Find("RingedGiant_Body/Sector/Vessel_Body/SPAWN_Vessel").GetComponent<VesselSpawnPoint>(); // gets vessel spawn point
+            _vesselSpawn = SearchUtilities.Find("RingedGiant_Body/Sector/Vessel_Body/SPAWN_Vessel").GetComponent<VesselSpawnPoint>(); // gets vessel spawn point
             _spawner = GameObject.FindGameObjectWithTag("Player").GetRequiredComponent<PlayerSpawner>(); // gets player spawner
-            _spawner.DebugWarp(vesselSpawn); // warps you to vessel
+            _spawner.DebugWarp(_vesselSpawn); // warps you to vessel
 
             // open eyes
             cameraEffectController.OpenEyes(animTime, false); // open eyes
             yield return new WaitForSeconds(animTime); //  waits until animation stops to proceed to next line
-            hasWarped = true; // sets has warped to true so this doesn't run constantly (because it's being called in update)
+            _hasWarped = true; // sets has warped to true so this doesn't run constantly (because it's being called in update)
         }
 
-        void Update()
+        public void Update()
         {
             if (HasMetCypress())
             {
@@ -112,26 +112,26 @@ namespace TheStrangerTheyAre
             }
 
             // check if vessel is active
-            if (vessel != null)
+            if (_vessel != null)
             {
-                music.SetActive(true); // enables final end times music
+                _music.SetActive(true); // enables final end times music
                 if (HasCypressBoardedVessel())
                 {
-                    if (!hasWarped)
+                    if (!_hasWarped)
                     {
                         StartCoroutine(Blink()); // blink coroutine that warps you and cypress to vessel if you convince cypress to board it. should only run once.
                     }
                 }
                 else
                 {
-                    leader.SetActive(true); // makes sure cypress is enabled in his default spot
-                    vesselLeader.SetActive(false); // makes sure cypress in the vessel is disabled
+                    _leader.SetActive(true); // makes sure cypress is enabled in his default spot
+                    _vesselLeader.SetActive(false); // makes sure cypress in the vessel is disabled
                 }
             } else
             {
-                Destroy(vesselLeader); // gets rid of vessel leader so he's not just floating there when the vessel is gone
-                Destroy(vesselReveal); // destroy ship log that confirms you warped the vessel when vessel is not there to begin with
-                music.SetActive(false); // disable final end times music when the vessel is not there
+                Destroy(_vesselLeader); // gets rid of vessel leader so he's not just floating there when the vessel is gone
+                Destroy(_vesselReveal); // destroy ship log that confirms you warped the vessel when vessel is not there to begin with
+                _music.SetActive(false); // disable final end times music when the vessel is not there
             }
         }
 

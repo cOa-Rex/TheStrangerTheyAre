@@ -5,18 +5,20 @@ namespace TheStrangerTheyAre
     public class EyeScientistTrigger : MonoBehaviour
     {
         [SerializeField]
-        GameObject sci1; // creates variable to store scientist1
+        public GameObject sci1; // creates variable to store scientist1
         [SerializeField]
-        GameObject sci2; // creates variable to store scientist2
-        bool triggerHit;
+        public GameObject sci2; // creates variable to store scientist2
 
-        void Awake()
+        private bool _triggerHit;
+
+        public void Awake()
         {
-            triggerHit = false;
+            _triggerHit = false;
         }
-        void Update()
+
+        public void Update()
         {
-            if (this.gameObject.activeSelf && !triggerHit)
+            if (this.gameObject.activeSelf && !_triggerHit)
             {
                 sci1.SetActive(true); // activates object when inside the trigger
                 sci2.SetActive(false); // activates object when inside the trigger
@@ -28,7 +30,7 @@ namespace TheStrangerTheyAre
             //checks if player collides with the trigger volume
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                triggerHit=true;
+                _triggerHit=true;
                 sci1.SetActive(false); // activates object when inside the trigger
                 sci2.SetActive(true); // activates object when inside the trigger
             }

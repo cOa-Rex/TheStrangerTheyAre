@@ -5,13 +5,15 @@ namespace TheStrangerTheyAre
     public class HomeBrambleMusicHandler : MonoBehaviour
     {
         [SerializeField]
-        public GameObject music; // to store the child gameobject, the music music volume.
+        public GameObject music; // to store the child gameobject, the music volume.
         [SerializeField]
         public GameObject defaultMusic; // to store default bramble audio
-        void Awake()
+
+        public void Awake()
         {
             music.SetActive(false); // sets headed home volume inactive at the start of each loop
         }
+
         public void Update()
         {
             if (Check() && !Check2())
@@ -30,6 +32,7 @@ namespace TheStrangerTheyAre
         {
             return Locator.GetShipLogManager().IsFactRevealed("LAB_TEXT_TERRA1"); // shiplog entry for reading text
         }
+
         private bool Check2()
         {
             return Locator.GetShipLogManager().IsFactRevealed("HOME_VISION");  // shiplog entry for homeworld reveal

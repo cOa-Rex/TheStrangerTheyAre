@@ -5,13 +5,13 @@ namespace TheStrangerTheyAre
 {
     public class ByeByeInterloper : MonoBehaviour
     {
-        GameObject interloper; // creates variable to store the interloper
-        GameObject nomShuttle;
+        private GameObject _interloper; // creates variable to store the interloper
+        private GameObject _nomShuttle;
 
-        void Awake()
+        public void Awake()
         {
-            interloper = SearchUtilities.Find("Comet_Body/Sector_CO"); // gets the interloper
-            nomShuttle = SearchUtilities.Find("Comet_Body/Prefab_NOM_Shuttle");
+            _interloper = SearchUtilities.Find("Comet_Body/Sector_CO"); // gets the interloper
+            _nomShuttle = SearchUtilities.Find("Comet_Body/Prefab_NOM_Shuttle");
         }
 
         public virtual void OnTriggerEnter(Collider hitCollider)
@@ -19,8 +19,8 @@ namespace TheStrangerTheyAre
             // checks if player collides with the trigger volume
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                interloper.SetActive(false); // activates object when inside the trigger
-                nomShuttle.SetActive(false);
+                _interloper.SetActive(false); // deactivates object when inside the trigger
+                _nomShuttle.SetActive(false);
             }
         }
 
@@ -29,8 +29,8 @@ namespace TheStrangerTheyAre
             // checks if player collides with the trigger volume
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                interloper.SetActive(true); // activates object when inside the trigger
-                nomShuttle.SetActive(true);
+                _interloper.SetActive(true); // activates object when outside the trigger
+                _nomShuttle.SetActive(true);
             }
         }
     }

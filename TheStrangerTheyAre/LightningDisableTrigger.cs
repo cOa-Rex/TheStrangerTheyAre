@@ -5,7 +5,7 @@ namespace TheStrangerTheyAre
 {
     public class LightningDisableTrigger : MonoBehaviour
     {
-        GameObject lightning; // to store lightning
+        private GameObject lightning; // to store lightning
 
         public void Start()
         {

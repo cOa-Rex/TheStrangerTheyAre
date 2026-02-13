@@ -6,21 +6,22 @@ namespace TheStrangerTheyAre
     public class QuantumDoorChecker : MonoBehaviour
     {
         [SerializeField]
-        private GameObject qDoorClosed;
+        public GameObject qDoorClosed;
         [SerializeField]
-        private GameObject qDoorOpen;
+        public GameObject qDoorOpen;
 
-        EclipseInterface eclipse;
+        private EclipseInterface _eclipse;
+
         public void Start()
         {
             var distantEnigma = TheStrangerTheyAre.NewHorizonsAPI.GetPlanet("Distant Enigma"); // gets the quantum planet with nh
 
-            eclipse = distantEnigma.transform.Find("Sector-2/EnigmaInterface/Prefab_IP_Door_Interface").GetComponent<EclipseInterface>();
+            _eclipse = distantEnigma.transform.Find("Sector-2/EnigmaInterface/Prefab_IP_Door_Interface").GetComponent<EclipseInterface>();
         }
 
         public void Update()
         {
-            if (eclipse.isOpen)
+            if (_eclipse.isOpen)
             {
                 qDoorClosed.SetActive(false);
                 qDoorOpen.SetActive(true);

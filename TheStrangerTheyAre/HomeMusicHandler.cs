@@ -11,10 +11,11 @@ public class HomeMusicHandler : MonoBehaviour
     [SerializeField]
     public GameObject homeIntroMusic; // to store the child gameobject, the intro music volume.
 
-    void Awake()
+    public void Awake()
     {
         homeMusic.SetActive(true); // sets headed home volume inactive at the start of each loop
     }
+
     public void Update()
     {
         if (Check() && !Check2())
@@ -35,10 +36,12 @@ public class HomeMusicHandler : MonoBehaviour
             homeIntroMusic.SetActive(false); // sets home intro music volume to false when the player saw the vision
         }
     }
+
     private bool Check()
     {
         return Locator.GetShipLogManager().IsFactRevealed("LAB_TEXT_TERRA1"); // shiplog entry for reading text
     }
+
     private bool Check2()
     {
         return Locator.GetShipLogManager().IsFactRevealed("HOME_VISION");  // shiplog entry for homeworld vision

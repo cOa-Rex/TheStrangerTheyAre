@@ -12,9 +12,6 @@ namespace TheStrangerTheyAre
     public class TheStrangerTheyAre : ModBehaviour
     {
         public static INewHorizons NewHorizonsAPI { get; private set; }
-        private GameObject oldTitlePlanet;
-        private GameObject titleRigidBody;
-        private AssetBundle _homeMoonBundle;
         private AssetBundle endingBundle;
 
         public static readonly ItemType CloakMineralItemType = EnumUtils.Create<ItemType>("CloakMineral");

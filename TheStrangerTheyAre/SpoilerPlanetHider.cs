@@ -5,10 +5,11 @@ namespace TheStrangerTheyAre
     public class SpoilerPlanetHider : MonoBehaviour
     {
 
-        GameObject homeMoon; // creates variable to store planet
-        void Awake()
+        private GameObject _homeMoon; // creates variable to store planet
+
+        public void Awake()
         {
-            homeMoon = GameObject.Find("StrangersHomeworld_Body/Sector"); // gets the quantum planet with nh
+            _homeMoon = GameObject.Find("StrangersHomeworld_Body/Sector"); // gets the quantum planet with nh
         }
 
         public virtual void OnTriggerEnter(Collider hitCollider)
@@ -16,15 +17,15 @@ namespace TheStrangerTheyAre
             //checks if player collides with the trigger volume
             if (hitCollider.CompareTag("PlayerDetector") && enabled && !Check())
             {
-                homeMoon.SetActive(false); // deactivates spoiler planet for ringed lab location reveal, if homeworld is not already discovered
+                _homeMoon.SetActive(false); // deactivates spoiler planet for ringed lab location reveal, if homeworld is not already discovered
             }
         }
 
         public virtual void OnTriggerExit(Collider hitCollider)
         {
-            if (hitCollider.CompareTag("PlayerDetector") && enabled && !homeMoon.activeSelf)
+            if (hitCollider.CompareTag("PlayerDetector") && enabled && !_homeMoon.activeSelf)
             {
-                homeMoon.SetActive(true); // activates spoiler planet when not in ringed lab, as long as the object is inactive.
+                _homeMoon.SetActive(true); // activates spoiler planet when not in ringed lab, as long as the object is inactive.
             }
         }
 

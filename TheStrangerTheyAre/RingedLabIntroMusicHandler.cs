@@ -10,12 +10,13 @@ namespace TheStrangerTheyAre
         [SerializeField]
         public GameObject Main; // to store the child gameobject, the main music volume.
 
-        GameObject defaultAudio; // to store the default audio for the station.
-        void Awake()
+        private GameObject _defaultAudio; // to store the default audio for the station.
+
+        public void Awake()
         {
             //Intro.SetActive(false); // sets headed home intro volume inactive at the start of each loop
             //Main.SetActive(false); // sets headed home volume inactive at the start of each loop
-            defaultAudio = GameObject.Find("RingedLaboratory_Body/Sector/AudioVolume");
+            _defaultAudio = GameObject.Find("RingedLaboratory_Body/Sector/AudioVolume");
         }
         public void Update()
         {
@@ -25,18 +26,18 @@ namespace TheStrangerTheyAre
                 {
                     Intro.SetActive(false); // sets headed home intro volume to true
                     Main.SetActive(true); // sets headed home volume to true
-                    defaultAudio.SetActive(false); // sets default to false
+                    _defaultAudio.SetActive(false); // sets default to false
                 } else
                 {
                     Intro.SetActive(true); // sets headed home intro volume to true
                     Main.SetActive(false); // sets headed home volume to true
-                    defaultAudio.SetActive(false); // sets default to false
+                    _defaultAudio.SetActive(false); // sets default to false
                 }
             } else
             {
                 Intro.SetActive(false); // sets headed home intro volume to true
                 Main.SetActive(false); // sets headed home volume to true
-                defaultAudio.SetActive(true); // sets default to false
+                _defaultAudio.SetActive(true); // sets default to false
             }
         }
 

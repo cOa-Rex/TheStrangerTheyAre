@@ -7,29 +7,29 @@ namespace TheStrangerTheyAre
     public class Biometrics : MonoBehaviour
     {
         [SerializeField]
-        GameObject scanner;
+        public GameObject scanner;
         [SerializeField]
-        AudioSource scanAudio;
+        public AudioSource scanAudio;
         [SerializeField]
-        AudioSource stopAudio;
+        public AudioSource stopAudio;
         [SerializeField]
-        GameObject pass;
+        public GameObject pass;
         [SerializeField]
-        AudioSource passAudio;
+        public AudioSource passAudio;
         [SerializeField]
-        GameObject fail;
+        public GameObject fail;
         [SerializeField]
-        AudioSource failAudio;
+        public AudioSource failAudio;
         [SerializeField]
-        RotatingDoor door;
+        public RotatingDoor door;
 
-        Animator scanAnim;
-        bool isInTrigger;
-        bool isScanning;
+        private Animator _scanAnim;
+        private bool _isInTrigger;
+        private bool _isScanning;
 
         public void Start()
         {
-            scanAnim = scanner.GetComponent<Animator>();
+            _scanAnim = scanner.GetComponent<Animator>();
             scanner.SetActive(false);
             pass.SetActive(false);
             fail.SetActive(true);
@@ -37,10 +37,10 @@ namespace TheStrangerTheyAre
 
         public IEnumerator DelayedCheck()
         {
-            isScanning = true;
+            _isScanning = true;
             yield return new WaitForSeconds(5); // wait until scan is done
 
-            if (isInTrigger)
+            if (_isInTrigger)
             {
                 if (Locator.GetToolModeSwapper().GetItemCarryTool().GetHeldItemType() == TheStrangerTheyAre.GhostbirdSkullItemType)
                 {
@@ -50,7 +50,7 @@ namespace TheStrangerTheyAre
                     passAudio.Play();
                     door.Open();
                     Locator.GetShipLogManager().RevealFact("CRIMSON_SPINLAB_BIO");
-                    isScanning = false;
+                    _isScanning = false;
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace TheStrangerTheyAre
                     fail.SetActive(true);
                     failAudio.Play();
                     door.Close();
-                    isScanning = false;
+                    _isScanning = false;
                 }
             }
         }
@@ -69,24 +69,24 @@ namespace TheStrangerTheyAre
             //checks if player collides with the trigger volume
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                isInTrigger = true;
+                _isInTrigger = true;
                 scanner.SetActive(true);
                 scanAudio.Play();
-                scanAnim.Play("scan", 0);
+                _scanAnim.Play("scan", 0);
                 StartCoroutine(DelayedCheck());
             }
         }
 
         public virtual void OnTriggerExit(Collider hitCollider)
         {
-            //checks if player exits with the trigger volume
+            //checks if player exits the trigger volume
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                isInTrigger = false;
-                if (isScanning)
+                _isInTrigger = false;
+                if (_isScanning)
                 {
                     StopCoroutine(DelayedCheck());
-                    scanAnim.Play("scanstop", 0);
+                    _scanAnim.Play("scanstop", 0);
                     scanAudio.Stop();
                     stopAudio.Play();
                 }

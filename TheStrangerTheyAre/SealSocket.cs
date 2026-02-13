@@ -1,17 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace TheStrangerTheyAre;
 public class SealSocket : OWItemSocket
 {
     [SerializeField]
-    GameObject activeObjects;
+    public GameObject activeObjects;
     [SerializeField]
     public SealID sealSocketID;
     [SerializeField]
-    GameObject inactiveObjects;
+    public GameObject inactiveObjects;
 
-    public bool itemPlaced;
+    private bool _itemPlaced;
+    public bool itemPlaced => _itemPlaced;
 
     public override void Awake()
     {
@@ -30,12 +32,12 @@ public class SealSocket : OWItemSocket
             {
                 activeObjects.SetActive(true);
                 inactiveObjects.SetActive(false);
-                itemPlaced = true;
+                _itemPlaced = true;
                 StartCoroutine(PlayAnimationAndProceed("ProjectionStart", false));
                 return true;
             }
         }
-        itemPlaced = false;
+        _itemPlaced = false;
         return false;
     }
 
@@ -68,7 +70,8 @@ public class SealSocket : OWItemSocket
     public override OWItem RemoveFromSocket()
     {
         OWItem oWItem = base.RemoveFromSocket();
-        
+
+        _itemPlaced = false;
         if (activeObjects.activeSelf)
         {
             StartCoroutine(PlayAnimationAndProceed("ProjectionEnd", true));

@@ -5,13 +5,13 @@ namespace TheStrangerTheyAre
 {
     public class StrangerTextHandlerTSTA : MonoBehaviour
     {
-        private GameObject[] strangerDialogue = new GameObject[11]; // create new array of gameobjects to store all custom sim reels
+        private GameObject[] _strangerDialogue = new GameObject[11]; // create new array of gameobjects to store all custom sim reels
 
         public void Start()
         {
             for (int i = 0; i < 11; i++)
             {
-                strangerDialogue[i] = SearchUtilities.Find("TSTA_StrangerDialogue_" + (i + 1)); // gets all custom strangerDialogue in the sim, stores in array
+                _strangerDialogue[i] = SearchUtilities.Find("TSTA_StrangerDialogue_" + (i + 1)); // gets all custom stranger dialogue in the sim, stores in array
             }
         }
 
@@ -22,7 +22,7 @@ namespace TheStrangerTheyAre
 
         public void Update()
         {
-            foreach (GameObject dialogue in strangerDialogue)
+            foreach (GameObject dialogue in _strangerDialogue)
             {
                 dialogue.SetActive(KnowsLanguage());
             }

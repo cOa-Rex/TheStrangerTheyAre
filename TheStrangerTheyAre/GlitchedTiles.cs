@@ -6,14 +6,14 @@ namespace TheStrangerTheyAre
     {
         // variables
         [SerializeField]
-        GameObject tiles; // creates variable to store the glitched tiles
+        public GameObject tiles; // creates variable to store the glitched tiles
 
-        void Awake()
+        public void Awake()
         {
             tiles.SetActive(false); // deactivates object at start of loop
         }
 
-        void Update()
+        public void Update()
         {
             // variables for update function
             var shouldBeActive = TimeLoop.GetSecondsElapsed() > 399 && TimeLoop.GetSecondsElapsed() < 790; // these tiles activate when solar sails get deployed, deactivated when the flood starts

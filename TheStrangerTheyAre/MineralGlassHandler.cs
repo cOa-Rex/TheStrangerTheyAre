@@ -6,26 +6,27 @@ namespace TheStrangerTheyAre
     public class MineralGlassHandler : MonoBehaviour
     {
         [SerializeField]
-        private GameObject[] objectsOn;
+        public GameObject[] objectsOn;
         [SerializeField]
-        private GameObject[] objectsOff;
-        private CodeTotemPuzzleHandler codeTotemPuzzle;
-        private bool areObjectsOn;
+        public GameObject[] objectsOff;
+
+        private CodeTotemPuzzleHandler _codeTotemPuzzle;
+        private bool _areObjectsOn;
 
         public void Start()
         {
-            areObjectsOn = false;
-            codeTotemPuzzle = SearchUtilities.Find("Sector/PreBrambleBase/Interactibles/CodePuzzle").GetComponent<CodeTotemPuzzleHandler>();
+            _areObjectsOn = false;
+            _codeTotemPuzzle = SearchUtilities.Find("Sector/PreBrambleBase/Interactibles/CodePuzzle").GetComponent<CodeTotemPuzzleHandler>();
             ToggleObjects(true);
         }
 
         public void Update()
         {
-            if (codeTotemPuzzle.areAllCodesMatched)
+            if (_codeTotemPuzzle.allCodesMatched)
             {
                 ToggleObjects(false);
             }
-            else if (!codeTotemPuzzle.areAllCodesMatched && areObjectsOn)
+            else if (!_codeTotemPuzzle.allCodesMatched && _areObjectsOn)
             {
                 ToggleObjects(true);
             }
@@ -35,7 +36,7 @@ namespace TheStrangerTheyAre
         {
             if (isOn)
             {
-                areObjectsOn = true;
+                _areObjectsOn = true;
                 foreach (GameObject objOn in objectsOn)
                 {
                     objOn.SetActive(true);
@@ -46,7 +47,7 @@ namespace TheStrangerTheyAre
                 }
             } else
             {
-                areObjectsOn = false;
+                _areObjectsOn = false;
                 foreach (GameObject objOn in objectsOn)
                 {
                     objOn.SetActive(false);

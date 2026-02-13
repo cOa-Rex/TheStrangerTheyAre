@@ -8,6 +8,7 @@ namespace TheStrangerTheyAre
         // variables
         private Transform water;
         private Transform waterParent;
+
         public void Awake()
         {
             GlobalMessenger<float>.AddListener("PlayerCameraEnterWater", OnCameraEnterWater);

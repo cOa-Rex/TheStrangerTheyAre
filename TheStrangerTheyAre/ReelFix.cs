@@ -12,7 +12,7 @@ namespace TheStrangerTheyAre
             GlobalMessenger.AddListener("EnterDreamWorld", OnEnterDreamWorld); // checks if player enters the sim
         }
 
-        void OnEnterDreamWorld()
+        public void OnEnterDreamWorld()
         {
             for (int i = 0; i < 18; i++)
             {

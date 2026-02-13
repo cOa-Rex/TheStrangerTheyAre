@@ -8,23 +8,25 @@ namespace TheStrangerTheyAre
     public class ArchivesShortcutHandler : MonoBehaviour
     {
         [SerializeField]
-        private InteractReceiver _interactReceiver;
+        public InteractReceiver interactReceiver;
         [SerializeField]
-        private SpawnPoint brambleSpawn;
-        private SpawnPoint archivesSpawn;
+        public SpawnPoint brambleSpawn;
+
+        private SpawnPoint _archivesSpawn;
 
         // spawn stuff
-        protected PlayerSpawner _spawner; // for spawning the player
+        private PlayerSpawner _spawner; // for spawning the player
+
         public const float blinkTime = 0.5f; // constant for blink time
         public const float animTime = blinkTime / 2f; // constant for blink animation time
 
         public void Start()
         {
-            archivesSpawn = SearchUtilities.Find("PreBramble_Archives_Body/Sector/PreBrambleBase/Interactibles/BrambleArchivesSpawn").GetComponent<SpawnPoint>();
-            if (_interactReceiver != null)
+            _archivesSpawn = SearchUtilities.Find("PreBramble_Archives_Body/Sector/PreBrambleBase/Interactibles/BrambleArchivesSpawn").GetComponent<SpawnPoint>();
+            if (interactReceiver != null)
             {
-                _interactReceiver.OnPressInteract += OnPressInteract;
-                _interactReceiver.SetPromptText(UITextType.RotateGearPrompt);
+                interactReceiver.OnPressInteract += OnPressInteract;
+                interactReceiver.SetPromptText(UITextType.RotateGearPrompt);
             }
         }
         public void OnPressInteract()
@@ -47,7 +49,7 @@ namespace TheStrangerTheyAre
             _spawner = GameObject.FindGameObjectWithTag("Player").GetRequiredComponent<PlayerSpawner>(); // gets player spawner
             _spawner.DebugWarp(brambleSpawn); // warps you to bramble seed
             yield return new WaitForSeconds(2.5f); // waits for player to enter dimension
-            _spawner.DebugWarp(archivesSpawn); // warps you to archives
+            _spawner.DebugWarp(_archivesSpawn); // warps you to archives
 
             // open eyes
             cameraEffectController.OpenEyes(animTime, false); // open eyes

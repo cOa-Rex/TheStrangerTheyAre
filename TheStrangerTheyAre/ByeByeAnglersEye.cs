@@ -4,11 +4,11 @@ namespace TheStrangerTheyAre
 {
     public class ByeByeAnglersEye : MonoBehaviour
     {
-        private GameObject anglersEye; // creates variable to store the interloper
+        private GameObject anglersEye; // creates variable to store angler's eye
 
-        void Awake()
+        public void Awake()
         {
-            anglersEye = TheStrangerTheyAre.NewHorizonsAPI.GetPlanet("Angler's Eye").transform.Find("Sector").gameObject; // gets the interloper
+            anglersEye = TheStrangerTheyAre.NewHorizonsAPI.GetPlanet("Angler's Eye").transform.Find("Sector").gameObject; // gets angler's eye
         }
 
         public virtual void OnTriggerEnter(Collider hitCollider)
@@ -25,7 +25,7 @@ namespace TheStrangerTheyAre
             // checks if player collides with the trigger volume
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                anglersEye.SetActive(true); // activates object when inside the trigger
+                anglersEye.SetActive(true); // activates object when outside the trigger
             }
         }
     }

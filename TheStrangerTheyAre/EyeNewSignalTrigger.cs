@@ -5,18 +5,20 @@ namespace TheStrangerTheyAre
     public class EyeNewSignalTrigger : MonoBehaviour
     {
         [SerializeField]
-        GameObject signal; // creates variable to store signal
+        public GameObject signal; // creates variable to store signal
         [SerializeField]
-        GameObject parentObject; // creates variable to store parent
-        bool triggerHit;
+        public GameObject parentObject; // creates variable to store parent
 
-        void Awake()
+        private bool _triggerHit;
+
+        public void Awake()
         {
-            triggerHit = false;
+            _triggerHit = false;
         }
-        void Update()
+
+        public void Update()
         {
-            if (parentObject.activeSelf && !triggerHit)
+            if (parentObject.activeSelf && !_triggerHit)
             {
                 signal.SetActive(true); // activates object when inside the trigger
             }
@@ -27,7 +29,7 @@ namespace TheStrangerTheyAre
             //checks if player collides with the trigger volume
             if (hitCollider.CompareTag("PlayerDetector") && enabled)
             {
-                triggerHit = true;
+                _triggerHit = true;
                 signal.SetActive(false); // activates object when inside the trigger
             }
         }
