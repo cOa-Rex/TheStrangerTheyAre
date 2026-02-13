@@ -6,6 +6,9 @@
     <OuterWildsModsDirectory>$(HOME)/.local/share/OuterWildsModManager/OWML/Mods</OuterWildsModsDirectory>
   </PropertyGroup>
   <PropertyGroup>
-    <OutputPath>$(OuterWildsModsDirectory)/AnonymousStrangerOW.TheStrangerTheyAre</OutputPath>
+    <OutputPath>$(OuterWildsModsDirectory)/AnonymousStrangerOW.TheStrangerTheyAre/</OutputPath>
+    <UnityPath>D:/tsta-unity/</UnityPath>
+    <UnityDllsDir>$(UnityPath)Assets/</UnityDllsDir>
+    <UnityBundlesDir>$(UnityPath)AssetBundles/StandaloneWindows/</UnityBundlesDir>
   </PropertyGroup>
 </Project>
