@@ -35,10 +35,10 @@ public class SealItem : OWItem
         return id switch
         {
             SealID.Desert => "Sizzling Sands",
-            SealID.Ring => "Ringed Giant",
+            SealID.Ringed => "Ringed Giant",
             SealID.Crimson => "Velvet Vortex",
-            SealID.Volcano => "Burning Bombardier",
-            SealID.Quantum => "Distant Enigma",
+            SealID.CrimsonMoon => "Burning Bombardier",
+            SealID.Enigma => "Distant Enigma",
             _ => throw new ArgumentException("Invalid SealID")
         };
     }
@@ -48,10 +48,10 @@ public class SealItem : OWItem
         return id switch
         {
             SealID.Desert => "DESERT_SEAL_E",
-            SealID.Ring => "RING_SEAL_E",
+            SealID.Ringed => "RING_SEAL_E",
             SealID.Crimson => "CRIMSON_SEAL_E",
-            SealID.Volcano => "VOLCANO_SEAL_E",
-            SealID.Quantum => "QUANTUM_SEAL_E",
+            SealID.CrimsonMoon => "VOLCANO_SEAL_E",
+            SealID.Enigma => "QUANTUM_SEAL_E",
             _ => throw new ArgumentException("Invalid SealID")
         };
     }
