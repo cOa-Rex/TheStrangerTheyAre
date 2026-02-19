@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TheStrangerTheyAre
 {
-   public class GearInterfaceCustom : MonoBehaviour
+    public class StrandedVesselSignalGearInterface : MonoBehaviour
     {
         [SerializeField]
         private InteractReceiver _interactReceiver;
@@ -55,7 +55,8 @@ namespace TheStrangerTheyAre
                 {
                     monitorOff.SetActive(false);
                     monitorOn.SetActive(true);
-                } else
+                }
+                else
                 {
                     monitorOff.SetActive(true);
                     monitorOn.SetActive(false);
