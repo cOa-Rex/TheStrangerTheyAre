@@ -3,66 +3,38 @@ using UnityEngine;
 
 namespace TheStrangerTheyAre
 {
-    public class StrandedVesselSignalGearInterface : MonoBehaviour
+    public class StrandedVesselSignalGearInterface : AbstractGearInterface
     {
         [SerializeField]
-        private InteractReceiver _interactReceiver;
+        public GameObject monitorOn;
 
         [SerializeField]
-        private GearInterfaceEffects _gearInterface;
+        public GameObject monitorOff;
 
-        [SerializeField]
-        private GameObject monitorOn;
+        private GameObject _vesselSignal;
 
-        [SerializeField]
-        private GameObject monitorOff;
+        private bool _isOn = false;
 
-        private GameObject vesselSignal;
-
-        private bool isOn = false;
-
-        public bool hasControls => _interactReceiver != null;
-
-        public void Start()
+        public override void Start()
         {
-            if (_interactReceiver != null)
-            {
-                _interactReceiver.OnPressInteract += OnPressInteract;
-                _interactReceiver.SetPromptText(UITextType.RotateGearPrompt);
-            }
-            vesselSignal = SearchUtilities.Find("STRANDED_VESSEL_SIGNAL");
-            vesselSignal.SetActive(false);
-            monitorOff.SetActive(true);
-            monitorOn.SetActive(false);
+            base.Start();
+            _vesselSignal = SearchUtilities.Find("STRANDED_VESSEL_SIGNAL");
+            UpdateObjects();
         }
 
-        public void OnDestroy()
+        public override bool CanInteract => true;
+
+        public override void OnGearRotated()
         {
-            if (_interactReceiver != null)
-            {
-                _interactReceiver.OnPressInteract -= OnPressInteract;
-            }
+            _isOn = !_isOn;
+            UpdateObjects();
         }
 
-        public void OnPressInteract()
+        public void UpdateObjects()
         {
-            if (_gearInterface != null)
-            {
-                _gearInterface.AddRotation(90f);
-                isOn ^= true; // toggles is on
-                vesselSignal.SetActive(isOn);
-                if (isOn)
-                {
-                    monitorOff.SetActive(false);
-                    monitorOn.SetActive(true);
-                }
-                else
-                {
-                    monitorOff.SetActive(true);
-                    monitorOn.SetActive(false);
-                }
-            }
-            _interactReceiver.ResetInteraction();
+            _vesselSignal.SetActive(_isOn);
+            monitorOff.SetActive(!_isOn);
+            monitorOn.SetActive(_isOn);
         }
     }
 }

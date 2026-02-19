@@ -1,14 +1,14 @@
 ﻿using NewHorizons.Components;
 using NewHorizons.Utility;
 using System.Collections;
+using System.Drawing;
+using System.Threading;
 using UnityEngine;
 
 namespace TheStrangerTheyAre
 {
-    public class ArchivesShortcutHandler : MonoBehaviour
+    public class ArchivesShortcutHandler : AbstractGearInterface
     {
-        [SerializeField]
-        public InteractReceiver interactReceiver;
         [SerializeField]
         public SpawnPoint brambleSpawn;
 
@@ -20,16 +20,15 @@ namespace TheStrangerTheyAre
         public const float blinkTime = 0.5f; // constant for blink time
         public const float animTime = blinkTime / 2f; // constant for blink animation time
 
-        public void Start()
+        public override void Start()
         {
+            base.Start();
             _archivesSpawn = SearchUtilities.Find("PreBramble_Archives_Body/Sector/PreBrambleBase/Interactibles/BrambleArchivesSpawn").GetComponent<SpawnPoint>();
-            if (interactReceiver != null)
-            {
-                interactReceiver.OnPressInteract += OnPressInteract;
-                interactReceiver.SetPromptText(UITextType.RotateGearPrompt);
-            }
         }
-        public void OnPressInteract()
+
+        public override bool CanInteract => true;
+
+        public override void OnGearRotated()
         {
             StartCoroutine(UseShortcut());
         }
