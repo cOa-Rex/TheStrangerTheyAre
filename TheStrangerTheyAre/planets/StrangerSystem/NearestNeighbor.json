@@ -22,9 +22,9 @@
 		"fogDensity": 0.4,
 		"fogSize": 2100
 	},
-    "MapMarker": {
-        "enabled": true
-    },
+	"MapMarker": {
+		"enabled": true
+	},
 	"Star": {
 		"size": 2000,
 		"tint": {

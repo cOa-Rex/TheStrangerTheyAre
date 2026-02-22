@@ -37,8 +37,8 @@
 		"surfaceSize": 100
 	},
 	"MapMarker": {
-        "enabled": true
-    },
+		"enabled": true
+	},
 	"canShowOnTitle": false,
 	"HeightMap": {
 		"redTile": {
@@ -47,14 +47,14 @@
 			"smoothnessTile": "assets/Texture/magma_h.png",
 			"size": 20
 		},
-        "blueTile": {
+		"blueTile": {
 			"textureTile": "assets/Texture/volcanorock.png",
 			"normalTile": "assets/Texture/volcanorock_n.png",
 			"smoothnessTile": "assets/Texture/volcanorock_h.png",
 			"size": 20
 		},
-        "textureMap": "assets/Texture/crimsonmoon_lod.png",
-        "heightMap": "assets/Texture/crimsonmoon_hm.png",
+		"textureMap": "assets/Texture/crimsonmoon_lod.png",
+		"heightMap": "assets/Texture/crimsonmoon_hm.png",
 		"tileBlendMap": "assets/Texture/crimsonmoon_r.png",
 		"minHeight": 70,
 		"maxHeight": 120
