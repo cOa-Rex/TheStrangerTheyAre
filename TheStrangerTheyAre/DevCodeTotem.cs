@@ -15,23 +15,23 @@ namespace TheStrangerTheyAre
         private GearInterfaceEffects _gearInterfaceVertical;
 
         [SerializeField]
-        private RotaryDial[] _dials;
+        private RotaryDial[] _dials = new RotaryDial[0];
 
         [SerializeField]
         private Transform _lockOnTransform;
 
         [SerializeField]
-        private Transform[] _selectors;
+        private Transform[] _selectors = new Transform[0];
 
         [Space]
         [SerializeField]
-        private int[] _secretCode1;
+        private int[] _secretCode1 = new int[0];
 
         [SerializeField]
-        private int[] _secretCode2;
+        private int[] _secretCode2 = new int[0];
 
         [SerializeField]
-        private int[] _secretCode3;
+        private int[] _secretCode3 = new int[0];
 
 
         [SerializeField]

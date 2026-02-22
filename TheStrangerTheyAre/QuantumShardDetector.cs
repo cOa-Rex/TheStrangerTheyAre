@@ -16,8 +16,7 @@ namespace TheStrangerTheyAre
         private GameObject _barkShip; // creates vairable to store ship
 
         private OWAudioSource _audio;
-        private bool _hasBroken; // creates boolean to check if the ice broke
-        private bool _stateActiveOnce; // creates boolean to check if the player saw state 3 or not.
+        private bool _hasBroken = false; // creates boolean to check if the ice broke
 
         private Vector3 _shardPos = new Vector3(-179.4065f, 60.6461f, -57.375f); // creates variable to store shard position
         private Quaternion _shardRot = new Quaternion(11.4458f, 345.3546f, 74.4897f, -0.0001f); // creates variable to store shard rotation
@@ -29,7 +28,6 @@ namespace TheStrangerTheyAre
         public void Start()
         {
             _hasBroken = false; // sets activation checking ice to false every loop
-            _stateActiveOnce = false; // sets state 3 activation checking volume to false every loop
 
             _planetState = TheStrangerTheyAre.NewHorizonsAPI.GetPlanet("Distant Enigma").transform.Find("Sector").gameObject; // gets state 1 of the planet
             _planetState3 = TheStrangerTheyAre.NewHorizonsAPI.GetPlanet("Distant Enigma").transform.Find("Sector-3").gameObject; // gets state 3 of the planet

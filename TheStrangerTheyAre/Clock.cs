@@ -5,7 +5,7 @@ namespace TheStrangerTheyAre;
 public class Clock : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] _rotatingElements;
+    private Transform[] _rotatingElements = new Transform[0];
 
     [SerializeField]
     private float _rotationSpeed = 0.13636f;

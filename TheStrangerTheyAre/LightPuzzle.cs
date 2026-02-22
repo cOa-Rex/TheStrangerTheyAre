@@ -13,7 +13,6 @@ namespace TheStrangerTheyAre
 
         public readonly Color maxColor = new Color(1.489617f, 1.513387f, 1.228142f);
         public readonly Color minColor = new Color(0.9354541f, 0.9530618f, 0.7417698f);
-        private Material lightbulbMat; //get reference to lightbulb, then check its Meshrenderer, then get the material (not sharedMaterial) in the appropriate slot)
         
         private float _openValue; //calculate distance to open state, it'll need to be between 0 (farthest) and 1 (closest).
         private bool _isLit;
@@ -46,7 +45,7 @@ namespace TheStrangerTheyAre
         public void DoLights()
         {
             Material[] mats = lightbulbRenderer.materials;
-            Material lightbulbMat = mats[1];
+            Material lightbulbMat = mats[1]; //get reference to lightbulb, then check its Meshrenderer, then get the material (not sharedMaterial) in the appropriate slot)
 
             float angle = door._rotatingElements[1].localRotation.eulerAngles.z;
             if (angle > 180) angle = 180 - (angle - 180);

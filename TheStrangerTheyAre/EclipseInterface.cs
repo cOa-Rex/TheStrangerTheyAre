@@ -5,10 +5,10 @@ namespace TheStrangerTheyAre
    public class EclipseInterface : AbstractGhostDoorInterface
     {
         [SerializeField]
-        private SingleLightSensor[] _lightSensors;
+        private SingleLightSensor[] _lightSensors = new SingleLightSensor[0];
 
         [SerializeField]
-        private Transform[] _rotatingElements;
+        private Transform[] _rotatingElements = new Transform[0];
 
         [Space]
         [SerializeField]

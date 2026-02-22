@@ -5,7 +5,7 @@ namespace TheStrangerTheyAre
     public class StrangerSystemAchievements : MonoBehaviour
     {
         [SerializeField]
-        private SealSocket[] sockets;
+        private SealSocket[] sockets = new SealSocket[(int)SealID.Enigma];
 
         public void Update()
         {
