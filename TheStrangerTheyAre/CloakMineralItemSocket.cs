@@ -1,6 +1,8 @@
-﻿namespace TheStrangerTheyAre;
+﻿using NewHorizons.Components.Props;
 
-public class CloakMineralItemSocket : OWItemSocket
+namespace TheStrangerTheyAre;
+
+public class CloakMineralItemSocket : NHItemSocket
 {
    public override void Awake()
     {

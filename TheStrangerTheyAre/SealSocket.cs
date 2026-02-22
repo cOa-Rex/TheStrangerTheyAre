@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using NewHorizons.Components.Props;
+using System.Collections;
 using UnityEngine;
 
 namespace TheStrangerTheyAre;
-public class SealSocket : OWItemSocket
+
+public class SealSocket : NHItemSocket
 {
     [SerializeField]
     public GameObject activeObjects;

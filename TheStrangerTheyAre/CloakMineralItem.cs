@@ -1,12 +1,20 @@
-﻿using UnityEngine;
+﻿using NewHorizons.Components.Props;
+using UnityEngine;
 
 namespace TheStrangerTheyAre;
 
-public class CloakMineralItem : OWItem
+public class CloakMineralItem : NHItem
 {
     public override void Awake()
     {
         _type = TheStrangerTheyAre.CloakMineralItemType;
+        DisplayName = "MineralDisplayName";
+        Droppable = true;
+        PickupAudio = AudioType.ToolItemScrollPickUp;
+        DropAudio = AudioType.ToolItemScrollDrop;
+        SocketAudio = AudioType.ToolItemScrollInsert;
+        UnsocketAudio = AudioType.ToolItemScrollRemove;
+        PickupFact = "ANGLERS_EYE_MINE_MINERAL";
         base.Awake();
     }
 
@@ -17,17 +25,10 @@ public class CloakMineralItem : OWItem
 
     public override string GetDisplayName()
     {
-        return string.Format(TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForOtherText("MineralDisplayName"), TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForUI("Mineral"));
-    }
-
-    public override void DropItem(Vector3 position, Vector3 normal, Transform parent, Sector sector, IItemDropTarget customDropTarget)
-    {
-        base.DropItem(position, normal, parent, sector, customDropTarget);
-    }
-
-    public override void PickUpItem(Transform holdTranform)
-    {
-        Locator.GetShipLogManager().RevealFact("ANGLERS_EYE_MINE_MINERAL");
-        base.PickUpItem(holdTranform);
+        if (_translatedName == null)
+        {
+            _translatedName = TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForOtherText(DisplayName);
+        }
+        return _translatedName;
     }
 }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using NewHorizons.Components.Props;
+using System;
 using UnityEngine;
 
 namespace TheStrangerTheyAre;
 
-public class SealItem : OWItem
+public class SealItem : NHItem
 {
     [SerializeField]
     public SealID sealID;
@@ -13,21 +14,26 @@ public class SealItem : OWItem
 
     public override void Awake()
     {
-        base.Awake();
         _type = TheStrangerTheyAre.SealItemType;
         _sealName = GetSealName(sealID);
         _sealFactID = GetSealFactID(sealID);
+        DisplayName = "SealDisplayName";
+        Droppable = true;
+        PickupAudio = AudioType.ToolItemSharedStonePickUp;
+        DropAudio = AudioType.ToolItemSharedStoneDrop;
+        SocketAudio = AudioType.ToolItemSharedStoneInsert;
+        UnsocketAudio = AudioType.ToolItemSharedStoneRemove;
+        PickupFact = _sealFactID;
+        base.Awake();
     }
 
     public override string GetDisplayName()
     {
-        return string.Format(TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForOtherText("SealDisplayName"), TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForUI(_sealName));
-    }
-
-    public override void PickUpItem(Transform holdTranform)
-    {
-        base.PickUpItem(holdTranform);
-        Locator.GetShipLogManager().RevealFact(_sealFactID);
+        if (_translatedName == null)
+        {
+            _translatedName = string.Format(TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForOtherText(DisplayName), TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForUI(_sealName));
+        }
+        return _translatedName;
     }
 
     public static string GetSealName(SealID id)

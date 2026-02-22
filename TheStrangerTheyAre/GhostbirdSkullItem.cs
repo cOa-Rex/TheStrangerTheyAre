@@ -1,12 +1,23 @@
-﻿using UnityEngine;
+﻿using NewHorizons.Components.Props;
+using UnityEngine;
 
 namespace TheStrangerTheyAre;
 
-public class GhostbirdSkullItem : OWItem
+public class GhostbirdSkullItem : NHItem
 {
+    private readonly Vector3 _defaultScale = Vector3.one;
+    private readonly Vector3 _smallerScale = Vector3.one * 0.3f;
+
     public override void Awake()
     {
         _type = TheStrangerTheyAre.GhostbirdSkullItemType;
+        DisplayName = "SkullDisplayName";
+        Droppable = true;
+        PickupAudio = AudioType.ToolItemSharedStonePickUp;
+        DropAudio = AudioType.ToolItemSharedStoneDrop;
+        SocketAudio = AudioType.ToolItemSharedStoneInsert;
+        UnsocketAudio = AudioType.ToolItemSharedStoneRemove;
+        PickupFact = "QUANTUM_CORPSE_SKULL";
         base.Awake();
     }
 
@@ -17,21 +28,22 @@ public class GhostbirdSkullItem : OWItem
 
     public override string GetDisplayName()
     {
-        return string.Format(TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForOtherText("SkullDisplayName"), TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForUI("Skull"));
+        if (_translatedName == null)
+        {
+            _translatedName = TheStrangerTheyAre.NewHorizonsAPI.GetTranslationForOtherText(DisplayName);
+        }
+        return _translatedName;
     }
 
     public override void DropItem(Vector3 position, Vector3 normal, Transform parent, Sector sector, IItemDropTarget customDropTarget)
     {
         base.DropItem(position, normal, parent, sector, customDropTarget);
-        Vector3 defaultScale = new Vector3(1, 1, 1);
-        transform.localScale = defaultScale;
+        transform.localScale = _defaultScale;
     }
 
     public override void PickUpItem(Transform holdTranform)
     {
         base.PickUpItem(holdTranform);
-        Vector3 smallerScale = new Vector3(0.3f, 0.3f, 0.3f);
-        transform.localScale = smallerScale;
-        Locator.GetShipLogManager().RevealFact("QUANTUM_CORPSE_SKULL");
+        transform.localScale = _smallerScale;
     }
 }
