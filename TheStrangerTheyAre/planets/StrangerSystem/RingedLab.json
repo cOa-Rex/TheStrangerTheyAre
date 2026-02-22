@@ -279,12 +279,12 @@
 			"outlineSprite": "assets/Texture/Shiplog/RINGEDLAB_UI_O.png",
 			"scale": 0.25,
 			"manualPosition": {
-				"x": 800,
-				"y": 100
+				"x": 903,
+				"y": 30
 			},
 			"manualNavigationPosition": {
-				"x": 2,
-				"y": 1
+				"x": 3,
+				"y": 0
 			}
 		}
 	}
