@@ -277,7 +277,15 @@
 			"invisibleWhenHidden": true,
 			"revealedSprite": "assets/Texture/Shiplog/RINGEDLAB_UI.png",
 			"outlineSprite": "assets/Texture/Shiplog/RINGEDLAB_UI_O.png",
-			"scale": 0.25
+			"scale": 0.25,
+			"manualPosition": {
+				"x": 800,
+				"y": 100
+			},
+			"manualNavigationPosition": {
+				"x": 2,
+				"y": 1
+			}
 		}
 	}
 }

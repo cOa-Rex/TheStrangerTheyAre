@@ -33,8 +33,17 @@
 		"xmlFile": "shiplogs/home.xml",
 		"spriteFolder": "assets/Texture/Shiplog",
 		"mapMode": {
-			"invisibleWhenHidden": true,
-			"revealedSprite": "assets/Texture/Shiplog/HOME_UI.png"
+			"revealedSprite": "assets/Texture/Shiplog/HOME_UI.png",
+			"outlineSprite": "assets/Texture/Shiplog/HOME_UI_O.png",
+			"scale": 1.25,
+			"manualPosition": {
+				"x": 800,
+				"y": 150
+			},
+			"manualNavigationPosition": {
+				"x": 2,
+				"y": 2
+			}
 		}
 	},
 	"Base": {

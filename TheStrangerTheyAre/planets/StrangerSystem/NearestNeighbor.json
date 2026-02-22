@@ -65,5 +65,21 @@
 		"lightRadius": 50000,
 		"stellarDeathType": "planetaryNebula",
 		"lifespan": 33
+	},
+	"ShipLog": {
+		"mapMode": {
+			"revealedSprite": "assets/Texture/Shiplog/NEARESTNEIGHBOR_UI.png",
+			"outlineSprite": "assets/Texture/Shiplog/NEARESTNEIGHBOR_UI_O.png",
+			"scale": 5.75,
+			"manualPosition": {
+				"x": 0,
+				"y": 0
+			},
+			"manualNavigationPosition": {
+				"x": 0,
+				"y": 0
+			},
+			"selectable": false
+		}
 	}
 }

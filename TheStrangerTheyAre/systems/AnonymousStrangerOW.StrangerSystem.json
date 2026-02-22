@@ -4,6 +4,7 @@
   "respawnHere": true,
   "canEnterViaWarpDrive": true,
   "factRequiredForWarp": "HOME_REVEAL",
+  "shipLogStartingPlanetID": "Homeworld",
   "StarChart": {
     "disappearanceTime": 33,
     "position": {

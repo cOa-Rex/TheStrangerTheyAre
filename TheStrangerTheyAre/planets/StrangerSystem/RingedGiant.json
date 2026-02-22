@@ -475,9 +475,17 @@
 		"xmlFile": "shiplogs/ringedgiant.xml",
 		"spriteFolder": "assets/Texture/Shiplog",
 		"mapMode": {
-			"invisibleWhenHidden": true,
 			"revealedSprite": "assets/Texture/Shiplog/RINGEDGIANT_UI.png",
-			"scale": 2
+			"outlineSprite": "assets/Texture/Shiplog/RINGEDGIANT_UI_O.png",
+			"scale": 5,
+			"manualPosition": {
+				"x": 800,
+				"y": 0
+			},
+			"manualNavigationPosition": {
+				"x": 2,
+				"y": 0
+			}
 		}
 	},
 	"ParticleFields": [

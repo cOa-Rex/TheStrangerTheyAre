@@ -515,9 +515,18 @@
 		"spriteFolder": "assets/Texture/Shiplog",
 		"xmlFile": "shiplogs/strandedvessel.xml",
 		"mapMode": {
+			"invisibleWhenHidden": true,
 			"revealedSprite": "assets/Texture/Shiplog/STRANDEDVESSEL_UI.png",
 			"outlineSprite": "assets/Texture/Shiplog/STRANDEDVESSEL_UI_O.png",
-			"invisibleWhenHidden": true
+			"scale": 1,
+			"manualPosition": {
+				"x": 1800,
+				"y": 0
+			},
+			"manualNavigationPosition": {
+				"x": 5,
+				"y": 0
+			}
 		}
 	}
 }

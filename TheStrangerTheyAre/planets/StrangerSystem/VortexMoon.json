@@ -267,9 +267,17 @@
 		"xmlFile": "shiplogs/volcano.xml",
 		"spriteFolder": "assets/Texture/Shiplog",
 		"mapMode": {
-			"invisibleWhenHidden": true,
 			"revealedSprite": "assets/Texture/Shiplog/CRIMSONMOON_UI.png",
-			"outlineSprite": "assets/Texture/Shiplog/CRIMSONMOON_UI_O.png"
+			"outlineSprite": "assets/Texture/Shiplog/CRIMSONMOON_UI_O.png",
+			"scale": 0.625,
+			"manualPosition": {
+				"x": 1200,
+				"y": 150
+			},
+			"manualNavigationPosition": {
+				"x": 3,
+				"y": 2
+			}
 		}
 	}
 }

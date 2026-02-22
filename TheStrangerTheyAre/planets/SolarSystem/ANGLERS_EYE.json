@@ -1767,6 +1767,7 @@
 		"spriteFolder": "assets/Texture/Shiplog",
 		"mapMode": {
 			"revealedSprite": "assets/Texture/Shiplog/ANGLERSEYE_UI.png",
+			"outlineSprite": "assets/Texture/Shiplog/ANGLERSEYE_UI_O.png",
 			"invisibleWhenHidden": true,
 			"manualPosition": {
 				"x": 1300,

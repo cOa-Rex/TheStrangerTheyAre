@@ -659,9 +659,17 @@
 		"xmlFile": "shiplogs/quantum.xml",
 		"spriteFolder": "assets/Texture/Shiplog",
 		"mapMode": {
-			"invisibleWhenHidden": true,
 			"revealedSprite": "assets/Texture/Shiplog/QUANTUMPLANET_UI.png",
-			"outlineSprite": "assets/Texture/Shiplog/QUANTUMPLANET_UI_O.png"
+			"outlineSprite": "assets/Texture/Shiplog/QUANTUMPLANET_UI_O.png",
+			"scale": 1.125,
+			"manualPosition": {
+				"x": 1500,
+				"y": 0
+			},
+			"manualNavigationPosition": {
+				"x": 4,
+				"y": 0
+			}
 		}
 	}
 }

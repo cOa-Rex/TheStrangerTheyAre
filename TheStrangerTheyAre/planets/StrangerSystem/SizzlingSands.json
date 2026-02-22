@@ -352,9 +352,17 @@
 		"spriteFolder": "assets/Texture/Shiplog",
 		"xmlFile": "shiplogs/desert.xml",
 		"mapMode": {
-			"invisibleWhenHidden": true,
 			"revealedSprite": "assets/Texture/Shiplog/DESERT_UI.png",
-			"outlineSprite": "assets/Texture/Shiplog/DESERT_UI_O.png"
+			"outlineSprite": "assets/Texture/Shiplog/DESERT_UI_O.png",
+			"scale": 1,
+			"manualPosition": {
+				"x": 400,
+				"y": 0
+			},
+			"manualNavigationPosition": {
+				"x": 1,
+				"y": 0
+			}
 		}
 	},
 	"ParticleFields": [
