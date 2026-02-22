@@ -35,7 +35,7 @@
 		"mapMode": {
 			"revealedSprite": "assets/Texture/Shiplog/HOME_UI.png",
 			"outlineSprite": "assets/Texture/Shiplog/HOME_UI_O.png",
-			"scale": 1.25,
+			"scale": 0.75,
 			"manualPosition": {
 				"x": 800,
 				"y": 150
