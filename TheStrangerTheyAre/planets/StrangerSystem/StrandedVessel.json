@@ -67,6 +67,17 @@
 					"z": -35.0823
 				}
 			}
+		],
+		"speedLimiterVolumes": [
+			{
+				"stoppingDistance": 150,
+				"rename": "SpeedLimiter",
+				"shape": {
+					"radius": 300,
+					"useShape": true,
+					"type": "sphere"
+				}
+			}
 		]
 	},
 	"Props": {
