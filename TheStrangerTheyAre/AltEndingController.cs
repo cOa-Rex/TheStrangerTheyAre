@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using NewHorizons.Utility;
+﻿using NewHorizons.Utility;
 using System.Collections;
+using UnityEngine;
 
 namespace TheStrangerTheyAre
 {

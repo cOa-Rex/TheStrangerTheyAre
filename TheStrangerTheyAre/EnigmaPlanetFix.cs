@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using NewHorizons.Components.Quantum;
 using NewHorizons.Utility;
-using NewHorizons.Components.Quantum;
+using UnityEngine;
 
 namespace TheStrangerTheyAre
 {

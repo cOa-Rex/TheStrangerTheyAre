@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using GhostEnums;
+﻿using GhostEnums;
 using NewHorizons.Utility;
+using UnityEngine;
 
 namespace TheStrangerTheyAre
 {

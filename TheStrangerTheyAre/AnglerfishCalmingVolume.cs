@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using NewHorizons.Utility;
+﻿using NewHorizons.Utility;
+using UnityEngine;
 
 namespace TheStrangerTheyAre
 {
