@@ -1027,7 +1027,7 @@
 		],
 		"insulatingVolumes": [
 			{
-				"parentPath": "Sector/BrambleMuseum_HOME/Interactables/Item_CloakMineral",
+				"parentPath": "Sector/BrambleMuseum_HOME/Interactables/CloakMineralSocket/Item_CloakMineral",
 				"shape": {
 					"useShape": true,
 					"type": "sphere",
