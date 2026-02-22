@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using NewHorizons.Utility.OWML;
 using OWML.Common;
 using OWML.ModHelper;
 using OWML.Utils;

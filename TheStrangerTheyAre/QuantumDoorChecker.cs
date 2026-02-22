@@ -1,5 +1,4 @@
-﻿using OWML.Common;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TheStrangerTheyAre
 {

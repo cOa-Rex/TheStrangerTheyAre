@@ -1,8 +1,5 @@
-﻿using NewHorizons.Components;
-using NewHorizons.Utility;
+﻿using NewHorizons.Utility;
 using System.Collections;
-using System.Drawing;
-using System.Threading;
 using UnityEngine;
 
 namespace TheStrangerTheyAre

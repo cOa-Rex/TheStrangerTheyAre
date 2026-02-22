@@ -1,6 +1,5 @@
 ﻿using NewHorizons.Utility;
 using NewHorizons.Utility.Files;
-using OWML.ModHelper;
 using UnityEngine;
 
 namespace TheStrangerTheyAre

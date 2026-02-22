@@ -1,9 +1,4 @@
-﻿using HarmonyLib;
-using NewHorizons.Utility;
-using OWML.Common;
-using UnityEngine;
-
-namespace TheStrangerTheyAre;
+﻿namespace TheStrangerTheyAre;
 
 #if DEBUG
 [HarmonyPatch]

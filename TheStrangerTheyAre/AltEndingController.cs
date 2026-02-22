@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using NewHorizons.Utility;
-using static NewHorizons.External.Modules.SpawnModule;
 using System.Collections;
 
 namespace TheStrangerTheyAre

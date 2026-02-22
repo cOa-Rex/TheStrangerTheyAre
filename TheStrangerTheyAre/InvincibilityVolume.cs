@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using OWML.Common;
 
 namespace TheStrangerTheyAre
 {

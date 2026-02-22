@@ -1,6 +1,4 @@
-﻿using NAudio.SoundFont;
-using NewHorizons.Components;
-using NewHorizons.Utility;
+﻿using NewHorizons.Utility;
 using UnityEngine;
 
 public class QuantumInstrumentTSTA : MonoBehaviour

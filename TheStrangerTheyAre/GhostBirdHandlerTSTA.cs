@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using OWML.Common;
-using NewHorizons.Utility;
 
 namespace TheStrangerTheyAre
 {
