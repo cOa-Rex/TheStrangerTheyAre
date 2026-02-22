@@ -102,27 +102,31 @@
 		}
 	},
 	"Spawn": {
-		"playerSpawn": {
-			"alignRadial": true,
-			"startWithSuit": true,
-			"makeDefaultIfFactRevealed": "HOME_REVEAL",
-			"rename": "SpawnPlayer_Home",
-			"position": {
-				"x": 198.9236,
-				"y": 27.044,
-				"z": -142.1909
+		"playerSpawnPoints": [
+			{
+				"alignRadial": true,
+				"startWithSuit": true,
+				"makeDefaultIfFactRevealed": "HOME_REVEAL",
+				"rename": "SpawnPlayer_Home",
+				"position": {
+					"x": 198.9236,
+					"y": 27.044,
+					"z": -142.1909
+				}
 			}
-		},
-		"shipSpawn": {
-			"alignRadial": true,
-			"makeDefaultIfFactRevealed": "HOME_REVEAL",
-			"rename": "SpawnShip_Home",
-			"position": {
-				"x": 140.4604,
-				"y": 56.3027,
-				"z": -149.5118
+		],
+		"shipSpawnPoints": [
+			{
+				"alignRadial": true,
+				"makeDefaultIfFactRevealed": "HOME_REVEAL",
+				"rename": "SpawnShip_Home",
+				"position": {
+					"x": 140.4604,
+					"y": 56.3027,
+					"z": -149.5118
+				}
 			}
-		}
+		]
 	},
 	"Props": {
 		"details": [

@@ -50,25 +50,29 @@
 		]
 	},
 	"Spawn": {
-		"shipSpawn": {
-			"isDefault": true,
-			"rename": "SpawnShip_Bramble",
-			"position": {
-				"x": -963.1741,
-				"y": -229.4492,
-				"z": -260.2756
+		"playerSpawnPoints": [
+			{
+				"isDefault": true,
+				"position": {
+					"x": -963.1741,
+					"y": -229.4492,
+					"z": -260.2756
+				},
+				"rename": "SpawnPlayer_Bramble",
+				"startWithSuit": true
 			}
-		},
-		"playerSpawn": {
-			"isDefault": true,
-			"position": {
-				"x": -963.1741,
-				"y": -229.4492,
-				"z": -260.2756
-			},
-			"rename": "SpawnPlayer_Bramble",
-			"startWithSuit": true
-		}
+		],
+		"shipSpawnPoints": [
+			{
+				"isDefault": true,
+				"rename": "SpawnShip_Bramble",
+				"position": {
+					"x": -963.1741,
+					"y": -229.4492,
+					"z": -260.2756
+				}
+			}
+		]
 	},
 	"Volumes": {
 		"audioVolumes": [
