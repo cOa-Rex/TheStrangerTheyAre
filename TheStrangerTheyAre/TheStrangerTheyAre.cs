@@ -15,7 +15,7 @@ namespace TheStrangerTheyAre
 
         public static readonly ItemType CloakMineralItemType = EnumUtils.Create<ItemType>("CloakMineral");
         public static readonly ItemType GhostbirdSkullItemType = EnumUtils.Create<ItemType>("GhostbirdSkull");
-        public static readonly ItemType SealItemType = EnumUtils.Create<ItemType>("Seal");
+        public static readonly ItemType SealItemType = EnumUtils.Create<ItemType>("StrangerSeal");
 
         public void Awake()
         {
