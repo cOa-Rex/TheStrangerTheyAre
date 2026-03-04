@@ -70,10 +70,10 @@
 		],
 		"speedLimiterVolumes": [
 			{
-				"stoppingDistance": 150,
+				"stoppingDistance": 250,
 				"rename": "SpeedLimiter",
 				"shape": {
-					"radius": 300,
+					"radius": 400,
 					"useShape": true,
 					"type": "sphere"
 				}
