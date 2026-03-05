@@ -1848,6 +1848,7 @@
 		],
 		"hazardVolumes": [
 			{
+				"parentPath": "Sector/Hurricane",
 				"firstContactDamageType": "electrical",
 				"firstContactDamage": 10000000,
 				"damagePerSecond": 10000000,
