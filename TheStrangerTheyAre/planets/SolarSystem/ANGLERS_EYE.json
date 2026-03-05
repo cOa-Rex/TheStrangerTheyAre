@@ -1644,6 +1644,7 @@
 		],
 		"signals": [
 			{
+				"rename": "AntennaSignal",
 				"frequency": "Strange Frequency",
 				"name": "Signal House",
 				"audio": "assets/Audio/POSTLUDE_SIGNAL.ogg",
@@ -1657,7 +1658,8 @@
 					"x": -22.36887,
 					"y": 115.6436,
 					"z": 28.60617
-				}
+				},
+				"parentPath": "Sector/SignalHouse/Props/SatelliteDish/Antenna/AntennaEnd"
 			}
 		],
 		"entryLocation": [
