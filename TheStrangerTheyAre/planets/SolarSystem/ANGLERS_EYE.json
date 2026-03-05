@@ -2067,7 +2067,7 @@
 				]
 			},
 			{
-				"rename": "R&DOrbitRevealVolume",
+				"rename": "R&DOrbitEnterRevealVolume",
 				"revealFor": "player",
 				"revealOn": "enter",
 				"position": {
@@ -2076,6 +2076,34 @@
 					"z": -79.98937
 				},
 				"radius": 3,
+				"reveals": [
+					"ANGLERS_EYE_RD_ORBIT"
+				]
+			},
+			{
+				"rename": "R&DOrbitObserveRevealVolume",
+				"revealFor": "player",
+				"revealOn": "observe",
+				"maxDistance": 10,
+				"position": {
+					"x": 5.7406,
+					"y": 79.544,
+					"z": -82.011
+				},
+				"rotation": {
+					"x": 43.9255,
+					"y": 356.3114,
+					"z": 355.4712
+				},
+				"shape": {
+					"useShape": false,
+					"type": "box",
+					"size": {
+						"x": 4.375,
+						"y": 0.25,
+						"z": 4.375
+					}
+				},
 				"reveals": [
 					"ANGLERS_EYE_RD_ORBIT"
 				]
