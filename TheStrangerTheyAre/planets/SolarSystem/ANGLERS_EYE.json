@@ -1967,10 +1967,25 @@
 				]
 			},
 			{
-				"rename": "HurricaneRevealVolume",
+				"rename": "HurricaneEnterRevealVolume",
 				"revealFor": "player",
 				"revealOn": "enter",
-				"radius": 75,
+				"radius": 100,
+				"position": {
+					"x": 1.104206,
+					"y": -100.9798,
+					"z": -0.5480309
+				},
+				"reveals": [
+					"ANGLERS_EYE_MAIN_HURRICANE_R1"
+				]
+			},
+			{
+				"rename": "HurricaneObserveRevealVolume",
+				"revealFor": "player",
+				"revealOn": "observe",
+				"radius": 80,
+				"maxDistance": 100,
 				"position": {
 					"x": 1.104206,
 					"y": -100.9798,
