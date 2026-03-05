@@ -1787,7 +1787,7 @@
 				"clipSelection": "random",
 				"track": "music",
 				"priority": 0,
-				"radius": 150.0,
+				"radius": 210.0,
 				"volume": 0.3,
 				"position": {}
 			},
@@ -1872,17 +1872,17 @@
 		],
 		"interferenceVolumes": [
 			{
-				"radius": 145.0
+				"radius": 210
 			}
 		],
 		"mapRestrictionVolumes": [
 			{
-				"radius": 145.0
+				"radius": 210
 			}
 		],
 		"oxygenVolumes": [
 			{
-				"radius": 145,
+				"radius": 210,
 				"position": {
 					"x": 0,
 					"y": 70,
@@ -1953,7 +1953,7 @@
 				"rename": "MainRevealVolume",
 				"revealFor": "player",
 				"revealOn": "enter",
-				"radius": 130,
+				"radius": 210,
 				"position": {
 					"x": 0,
 					"y": 0,
